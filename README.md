@@ -2,9 +2,11 @@
 
 End World Thirst: A Website to Find Breweries Near You!
 
-## Description 
+## Description
 
-## Installation 
+This project is a step towards understanding AGILE development within a team setting.
+
+## Installation
 
 N/A
 
