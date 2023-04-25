@@ -1,2 +1,7 @@
-# end-world-thirst
-project 1
+# END WORLD THIRST
+
+=====A work in progress for our group project====
+
+## License
+
+Refer to the license in the repository
