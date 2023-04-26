@@ -1,5 +1,17 @@
 .length {
-  height: 80vh;
+  height: 80vh
+}
+
+.desc {
+    border-bottom: gray 2px dashed;
+}
+
+.button-section {
+    margin-top: 3%;
+}
+
+::placeholder {
+    text-align: center;
 }
 
 .lets-connect {
