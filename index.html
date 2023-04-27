@@ -4,15 +4,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <!--Bulma stylesheet-->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
+      <!--Leaflet stylesheet-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+     <!--Custom stylesheet-->
 		<link
 		rel="stylesheet"
 		href="./assets/css/style.css"
 	/>
-    <title>Basic website name</title>
+    <title>End World Thirst Landing Page</title>
   </head>
 
   <body>
@@ -45,7 +54,9 @@
       <h1 class="column is-4 has-background-warning-light length">
         <p class="title is-size-2 has-text-centered">QUENCH WITH LOCATION:</p>
         <section class="name"></section>
-        <section id="map" class="map"></section>
+        <section class="map">
+          <div id="map"></div>
+        </section>
         <section class="address"></section>
       </h1>
       <aside class="column is-4 has-background-warning length">
@@ -64,6 +75,13 @@
         </section>
       </section>
     </footer>
+    <!--Leaflet script-->
+      <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+     <!--Custom script-->
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
