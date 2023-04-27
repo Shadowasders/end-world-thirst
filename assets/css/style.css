@@ -19,20 +19,33 @@
 ::placeholder {
   text-align: center;
 }
+/* footer */
+
+.footer {
+  background-image: url('../images/fred-moon-0yqa0rMCsYk-unsplash.jpg');
+  background-size: cover;
+  background-position: bottom;
+}
 
 .lets-connect {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
 }
 
 .contact {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
 }
 
 .mobile {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
 }
 
 #map {
