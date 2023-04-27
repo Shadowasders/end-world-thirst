@@ -1,7 +1,19 @@
+// ====================================================== //
+//                -------- VARIABLES --------             //
+// ====================================================== //
 const btnSubmit = document.querySelector("#submit-btn");
 const userZip = document.querySelector("#zipsubmit");
 const WeatherAPIKey = "021e75b0e3380e236b4ff6031ae2dde4";
+let map;
+let marker, circle, lat, lon;
 
+// ====================================================== //
+//                   -------- CODE --------               //
+// ====================================================== //
+
+/**
+ * favorites loads upon refresh
+ */
 function init() {
   let tempVal = localStorage.getItem();
 }
@@ -60,4 +72,23 @@ function getCoordinates(allData) {
     lon: lon,
   };
   console.log(referenceLocation);
+  renderDetails();
+}
+/**
+ * renders the map of user zip code and a five-mile radius circle
+ */
+function renderDetails() {
+  map = L.map("map").setView([lat, lon], 8.05);
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution:
+      '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  }).addTo(map);
+  marker = L.marker([lat, lon]).addTo(map);
+  circle = L.circle([lat, lon], {
+    color: "red",
+    fillColor: "#f03",
+    fillOpacity: 0.5,
+    radius: 8046.72,
+  }).addTo(map);
 }
