@@ -1,24 +1,23 @@
-.topbeer{
-  background-image:url('../images/fred-moon-0yqa0rMCsYk-unsplash.jpg');
+.topbeer {
+  background-image: url("../images/fred-moon-0yqa0rMCsYk-unsplash.jpg");
   background-size: cover;
   background-position: center;
 }
 
-
 .length {
-  height: 80vh
+  height: 80vh;
 }
 
 .desc {
-    border-bottom: gray 2px dashed;
+  border-bottom: gray 2px dashed;
 }
 
 .button-section {
-    margin-top: 3%;
+  margin-top: 3%;
 }
 
 ::placeholder {
-    text-align: center;
+  text-align: center;
 }
 /* footer */
 
@@ -29,23 +28,27 @@
 }
 
 .lets-connect {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 1.2rem;
   color: white;
   font-weight: bold;
 }
 
 .contact {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 1.2rem;
   color: white;
   font-weight: bold;
 }
 
 .mobile {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 1.2rem;
   color: white;
   font-weight: bold;
 }
 
+#map {
+  width: 200px;
+  height: 200px;
+}
