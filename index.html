@@ -37,36 +37,42 @@
     </section>
 
     <section class="columns">
-      <div class="column is-4 has-background-warning-light length">
+      <div class="column is-4 has-background-warning-light ml-2 length">
         <p class="title is-size-2 has-text-centered">HOW DOES THIS WORK?</p>
         <p class="is-size-5 has-text-left desc">1. Enter your zipcode below.</p>
         <br />
-        <p class="is-size-5 has-text-centered desc">2. See your search results on the right!</p>
+        <p class="is-size-5 has-text-centered desc mt-4">2. See your search results on the right!</p>
         <br />
-        <p class="is-size-5 has-text-right desc">3. Save it to your faves!</p>
-        <section class=" tile is-parent is-vertical button-section">
+        <p class="is-size-5 has-text-right desc mt-4">3. Save it to your faves!</p>
+        <section class="is-vertical button-section">
           <p class="title is-child is-warning has-text-centered pb-3">Search by zipcode</p>
-          <input class="subtitle has-text-centered" type="text" id="zipsubmit" placeholder="Let's Drink!"/>
-          <input type="submit" name="submit" id ="submit-btn" />
+          <input class="input is-warning-dark subtitle has-text-centered ziparea is-center" type="text" id="zipsubmit" placeholder="Let's Drink!"/>
+          <button class="button is-fullwidth is-medium" name="submit" id ="submit-btn">submit</button>
+          <img class = "beerimg image m-auto" src="./assets/images/beerimg-transparent.png" />
         </section>
       </div>
       <div class="column is-4 has-background-warning-light length">
-        <p class="title is-size-2 has-text-centered">QUENCH WITH LOCATION:</p>
+        <p class="title is-size-2 has-text-centered">FIND BREWS</p>
         <section class="name"></section>
         <section class="map">
           <div id="map"></div>
         </section>
         <section class="address"></section>
-        <h2 class="subtitle has-text-weight-bold">Choose your search radius:</h2>
-        <input type="radio" id="5miles" value="5 miles" class="" name="mileselctors"/>
-        <label for="5miles">5 miles</label>
-        <input type="radio" id="10miles" value="10 miles" class="" name="mileselctors"/>
-        <label for="10miles">10 miles</label>
-        <input type="radio" id="15miles" value="10 miles" class="" name="mileselctors"/>
-        <label for="15miles">15 miles</label>
+        <div class="content">
+        <h2 class="subtitle has-text-weight-bold has-text-centered is-underlined">Choose your search radius</h2>
+        <ul class="nostyle">
+        <li><input type="radio" id="5miles" value="5 miles" class="" name="mileselectors"/>
+        <label for="5miles">5 miles</label></li>
+        <li><input type="radio" id="10miles" value="10 miles" class="" name="mileselectors"/>
+        <label for="10miles">10 miles</label></li>
+        <li><input type="radio" id="15miles" value="10 miles" class="" name="mileselectors"/>
+        <label for="15miles">15 miles</label></li>
+        </ul>
+        </div>
       </div>
       <aside class="column is-4 has-background-warning length">
         <p class="title is-size-2 has-text-centered">FAVOURITES!</p>
+        <button  class="button is-medium is-fullwidth is-responsive is-warning-light" id="clearbtn">Clear Faves</button>
       </aside>
     </section>
 
