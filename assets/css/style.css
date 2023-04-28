@@ -16,6 +16,7 @@
   margin-top: 3%;
 }
 
+
 ::placeholder {
   text-align: center;
 }
@@ -48,6 +49,7 @@
   background-color: rgba(226, 126, 12, 0.4);
 
 }
+
 
 .mobile {
   font-family: Georgia, "Times New Roman", Times, serif;
