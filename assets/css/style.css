@@ -54,7 +54,8 @@
   font-size: 1.2rem;
   color: white;
   font-weight: bold;
-  background-color: rgba(226, 126, 12, 0.4);
+  background-color: rgba(226, 126, 12, 0.77);
+  border-radius: .55em;
 }
 
 .contact {
@@ -62,8 +63,8 @@
   font-size: 1.2rem;
   color: white;
   font-weight: bold;
-  background-color: rgba(226, 126, 12, 0.4);
-
+  background-color: rgba(226, 126, 12, 0.77);
+  border-radius: .55em;
 }
 
 .mobile {
@@ -71,8 +72,8 @@
   font-size: 1.2rem;
   color: white;
   font-weight: bold;
-  background-color: rgba(226, 126, 12, 0.4);
-
+  background-color: rgba(226, 126, 12, 0.77);
+  border-radius: .55em;
 }
 
 #map {
