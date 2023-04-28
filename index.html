@@ -46,7 +46,7 @@
         <p class="is-size-5 has-text-right desc">3. Save it to your faves!</p>
         <section class=" tile is-parent is-vertical button-section">
           <p class="title is-child is-warning has-text-centered pb-3">Search by zipcode</p>
-          <input class="subtitle" type="text" id="zipsubmit" placeholder="Let's Drink!"/>
+          <input class="subtitle has-text-centered" type="text" id="zipsubmit" placeholder="Let's Drink!"/>
           <input type="submit" name="submit" id ="submit-btn" />
         </section>
       </div>
@@ -57,11 +57,13 @@
           <div id="map"></div>
         </section>
         <section class="address"></section>
-        <h2 class="subtitle has-text-weight-bold">Expand search radius:</h2>
-        <input type="radio" id="5miles" value="5 miles" class=""/>
+        <h2 class="subtitle has-text-weight-bold">Choose your search radius:</h2>
+        <input type="radio" id="5miles" value="5 miles" class="" name="mileselctors"/>
         <label for="5miles">5 miles</label>
-        <input type="radio" id="10miles" value="10 miles" class=""/>
+        <input type="radio" id="10miles" value="10 miles" class="" name="mileselctors"/>
         <label for="10miles">10 miles</label>
+        <input type="radio" id="15miles" value="10 miles" class="" name="mileselctors"/>
+        <label for="15miles">15 miles</label>
       </div>
       <aside class="column is-4 has-background-warning length">
         <p class="title is-size-2 has-text-centered">FAVOURITES!</p>
