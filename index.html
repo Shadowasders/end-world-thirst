@@ -37,7 +37,7 @@
     </section>
 
     <section class="columns">
-      <h1 class="column is-4 has-background-warning-light length">
+      <div class="column is-4 has-background-warning-light length">
         <p class="title is-size-2 has-text-centered">HOW DOES THIS WORK?</p>
         <p class="is-size-5 has-text-left desc">1. Enter your zipcode below.</p>
         <br />
@@ -45,20 +45,24 @@
         <br />
         <p class="is-size-5 has-text-right desc">3. Save it to your faves!</p>
         <section class=" tile is-parent is-vertical button-section">
-          <p class="title is-child is-warning has-text-centered zip">search by zipcode</p>
+          <p class="title is-child is-warning has-text-centered pb-3">Search by zipcode</p>
           <input class="subtitle" type="text" id="zipsubmit" placeholder="Let's Drink!"/>
           <input type="submit" name="submit" id ="submit-btn" />
         </section>
-      </h1>
-
-      <h1 class="column is-4 has-background-warning-light length">
+      </div>
+      <div class="column is-4 has-background-warning-light length">
         <p class="title is-size-2 has-text-centered">QUENCH WITH LOCATION:</p>
         <section class="name"></section>
         <section class="map">
           <div id="map"></div>
         </section>
         <section class="address"></section>
-      </h1>
+        <h2 class="subtitle has-text-weight-bold">Expand search radius:</h2>
+        <input type="radio" id="5miles" value="5 miles" class=""/>
+        <label for="5miles">5 miles</label>
+        <input type="radio" id="10miles" value="10 miles" class=""/>
+        <label for="10miles">10 miles</label>
+      </div>
       <aside class="column is-4 has-background-warning length">
         <p class="title is-size-2 has-text-centered">FAVOURITES!</p>
       </aside>
