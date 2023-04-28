@@ -53,8 +53,11 @@ Using our web app is easy. Follow the easy steps below:
 Development Team:
 
 [Damien Brockington](https://github.com/damez21)
+
 [Elvis Lau](https://github.com/elvislau74)
+
 [Aubrey Mckinney](https://github.com/shadowasders)
+
 [Jimmy Pedone](https://github.com/JimmyPedone)
 
 ## License
