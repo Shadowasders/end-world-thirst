@@ -48,15 +48,15 @@ Using our web app is easy. Follow the easy steps below:
 
 <a href="https://myrojoylee.github.io/end-world-thirst/">Click here for the Live Demo!</a>
 
-## Credits
-
-Development Team:
+## Development Team:
 
 [Damien Brockington](https://github.com/damez21)
 
 [Elvis Lau](https://github.com/elvislau74)
 
-[Aubrey Mckinney](https://github.com/shadowasders)
+[Myro Joy Lee](https://github.com/myrojoylee)
+
+[Aubrey McKinney](https://github.com/shadowasders)
 
 [Jimmy Pedone](https://github.com/JimmyPedone)
 
