@@ -4,21 +4,12 @@
   background-position: center;
 }
 
-.top-title {
-  font-family:Georgia, 'Times New Roman', Times, serif;
-  color: white;
-  font-weight: bold;
-  border-radius: 10px;
-  background-color: rgba(226, 126, 12, 0.4);
-}
-
-.subtitle {
+.title-box {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: white;
   font-weight: bold;
   border-radius: 10px;
-  background-color: rgba(226, 126, 12, 0.4);
-
+  background-color: rgba(226, 126, 12, 0.77);
 }
 
 .length {
