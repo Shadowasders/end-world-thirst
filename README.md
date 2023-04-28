@@ -4,23 +4,23 @@ End World Thirst: A Website to Find Breweries Near You!
 
 ## Description
 
-What:
+### What:
 
 Finding breweries around you can be a pain. We have created a web app that helps plan your next outing by helping the user create a list of breweries based off of their zipcode.
 
-How:
+### How:
 
-Technologies: HTML/CSS/JavaScript
+-Technologies: HTML/CSS/JavaScript
 
-Frameworks: Bulma CSS
+-Frameworks: Bulma CSS
 
-APIs:
+### APIs:
 
-[OpenWeather Geocoding API](https://openweathermap.org/api/geocoding-api)
+-[OpenWeather Geocoding API](https://openweathermap.org/api/geocoding-api)
 
-[Open Brewery DB](https://www.openbrewerydb.org/documentation)
+-[Open Brewery DB](https://www.openbrewerydb.org/documentation)
 
-[Leaflet JS](https://leafletjs.com/)
+-[Leaflet JS](https://leafletjs.com/)
 
 ## Installation
 
@@ -50,15 +50,15 @@ Using our web app is easy. Follow the easy steps below:
 
 ## Development Team:
 
-[Damien Brockington](https://github.com/damez21)
+-[Damien Brockington](https://github.com/damez21)
 
-[Elvis Lau](https://github.com/elvislau74)
+-[Elvis Lau](https://github.com/elvislau74)
 
-[Myro Joy Lee](https://github.com/myrojoylee)
+-[Myro Joy Lee](https://github.com/myrojoylee)
 
-[Aubrey McKinney](https://github.com/shadowasders)
+-[Aubrey McKinney](https://github.com/shadowasders)
 
-[Jimmy Pedone](https://github.com/JimmyPedone)
+-[Jimmy Pedone](https://github.com/JimmyPedone)
 
 ## License
 
