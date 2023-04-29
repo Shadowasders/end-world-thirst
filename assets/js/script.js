@@ -3,6 +3,7 @@
 // ====================================================== //
 const btnSubmit = document.querySelector("#submit-btn");
 const userZip = document.querySelector("#zipsubmit");
+const searchRadiusEL = document.querySelector("#search-radius");
 const WeatherAPIKey = "021e75b0e3380e236b4ff6031ae2dde4";
 let map;
 let marker, circle, lat, lon;
@@ -40,8 +41,8 @@ function renderInvalidMessage() {
   let warningMessage;
   warningMessage = document.createElement("p");
   warningMessage.style.color = "red";
-  warningMessage.textContent = "invalid input, L + ratio + you suck";
-  btnSubmit.parentElement.appendChild(warningMessage);
+  warningMessage.textContent = "Please enter a valid zipcode.";
+  searchRadiusEL.appendChild(warningMessage);
 }
 
 /**
