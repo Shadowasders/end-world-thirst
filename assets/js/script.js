@@ -6,7 +6,7 @@ const userZip = document.querySelector("#zipsubmit");
 const searchRadiusEL = document.querySelector("#search-radius");
 const WeatherAPIKey = "021e75b0e3380e236b4ff6031ae2dde4";
 let favesListEL = document.querySelector("#faves-list");
-let favoritesList = []; 
+let favoritesList = [];
 let map;
 let marker, circle, lat, lon;
 
@@ -19,7 +19,8 @@ let marker, circle, lat, lon;
  */
 function init() {
   let tempVal = localStorage.getItem("input");
-  if(tempVal){ // if exists
+  if (tempVal) {
+    // if exists
     favoritesList = JSON.parse(tempVal);
   }
   renderFavorites();
@@ -52,16 +53,14 @@ function renderFavorites() {
     let favoritesButton = document.createElement("button");
     favoritesButton.textContent = favoritesList[i];
     favoritesButton.value = favoritesList[i];
-    favoritesButton.setAttribute("class", "faves-btn")
+    favoritesButton.setAttribute("class", "faves-btn");
     favesListEL.appendChild(favoritesButton);
-  
   }
-};
+}
 
 // favesListEL.addEventListener("click", ".faves-btn", function(){
 //   fetchUserZipCode(this.value)
 // });
-
 
 /**
  * user input validation
@@ -101,24 +100,49 @@ function getCoordinates(allData) {
     lat: lat,
     lon: lon,
   };
-  console.log(referenceLocation);
-  renderDetails();
+  // console.log(referenceLocation);
+  clearPreviousMap(10);
 }
+
 /**
- * renders the map of user zip code and a five-mile radius circle
+ * clears previous map before initializing new one
+ * @param {*} zoomValue
  */
-function renderDetails() {
-  map = L.map("map").setView([lat, lon], 8.05);
+function clearPreviousMap(zoomValue) {
+  if (map == undefined) {
+    renderMap(zoomValue);
+  } else {
+    distanceAndBoolean = [];
+    nameAndCoordinates = [];
+    withinFiveMiles = [];
+    withinTenMiles = [];
+    withinFifteenMiles = [];
+    map.remove();
+    renderMap(zoomValue);
+  }
+}
+
+/**
+ * renders the map of user's zip code
+ */
+function renderMap(zoomValue) {
+  map = L.map("map").setView([lat, lon], zoomValue);
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
     attribution:
       '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
   }).addTo(map);
-  marker = L.marker([lat, lon]).addTo(map);
+}
+
+/**
+ * renders search circle based on search parameters
+ * @param {*} radiusInMeters
+ */
+function renderSearchCircle(radiusInMeters) {
   circle = L.circle([lat, lon], {
     color: "red",
     fillColor: "#f03",
     fillOpacity: 0.5,
-    radius: 8046.72,
+    radius: radiusInMeters,
   }).addTo(map);
 }
