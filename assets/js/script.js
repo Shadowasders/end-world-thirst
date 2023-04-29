@@ -5,6 +5,8 @@ const btnSubmit = document.querySelector("#submit-btn");
 const userZip = document.querySelector("#zipsubmit");
 const searchRadiusEL = document.querySelector("#search-radius");
 const WeatherAPIKey = "021e75b0e3380e236b4ff6031ae2dde4";
+let favesListEL = document.querySelector("#faves-list");
+let favoritesList = []; 
 let map;
 let marker, circle, lat, lon;
 
@@ -16,8 +18,14 @@ let marker, circle, lat, lon;
  * favorites loads upon refresh
  */
 function init() {
-  let tempVal = localStorage.getItem();
+  let tempVal = localStorage.getItem("input");
+  if(tempVal){ // if exists
+    favoritesList = JSON.parse(tempVal);
+  }
+  renderFavorites();
 }
+
+init();
 
 btnSubmit.addEventListener("click", function () {
   console.log("Hi");
@@ -30,9 +38,30 @@ btnSubmit.addEventListener("click", function () {
   } else {
     console.log("valid input");
   }
-  let userInput = localStorage.setItem("input", userZip.value);
+  // let userInput = localStorage.setItem("input", userZip.value);
   fetchUserZipCode(tempUserVal);
+  favoritesList.push(tempUserVal);
+  localStorage.setItem("input", JSON.stringify(favoritesList));
+  renderFavorites();
 });
+
+console.log(favesListEL);
+function renderFavorites() {
+  favesListEL.innerHTML = "";
+  for (let i = 0; i < favoritesList.length; i++) {
+    let favoritesButton = document.createElement("button");
+    favoritesButton.textContent = favoritesList[i];
+    favoritesButton.value = favoritesList[i];
+    favoritesButton.setAttribute("class", "faves-btn")
+    favesListEL.appendChild(favoritesButton);
+  
+  }
+};
+
+// favesListEL.addEventListener("click", ".faves-btn", function(){
+//   fetchUserZipCode(this.value)
+// });
+
 
 /**
  * user input validation
