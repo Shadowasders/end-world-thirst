@@ -50,6 +50,11 @@ function init() {
 init();
 
 btnSubmit.addEventListener("click", function () {
+  eraseOtherLists();
+  withinFiveMiles = [];
+  withinTenMiles = [];
+  withinFifteenMiles = [];
+  breweryList = [];
   radiusCheck.addEventListener("change", displayLists);
   let tempUserVal;
   // console.log(userZip.value);
@@ -65,10 +70,6 @@ btnSubmit.addEventListener("click", function () {
   favoritesList.push(tempUserVal);
   localStorage.setItem("input", JSON.stringify(favoritesList));
   renderFavorites();
-  if (radiusCheck.value !== undefined) {
-    console.log("here?");
-    displayLists();
-  }
 });
 
 console.log(favesListEL);
@@ -292,7 +293,7 @@ function displayLists() {
     renderSearchCircle(16500);
   } else {
     createFifteenList();
-    map.setZoom(8.5);
+    map.setZoom(8);
     renderSearchCircle(25000);
     document.querySelector("#fifteenMileList").style.display = "block";
   }
@@ -316,8 +317,6 @@ function clearPreviousMap(zoomValue) {
   if (map == undefined) {
     renderMap(zoomValue);
   } else {
-    distanceAndBoolean = [];
-    nameAndCoordinates = [];
     withinFiveMiles = [];
     withinTenMiles = [];
     withinFifteenMiles = [];
