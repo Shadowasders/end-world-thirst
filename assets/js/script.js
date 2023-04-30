@@ -7,6 +7,9 @@ const searchRadiusEL = document.querySelector("#search-radius");
 const WeatherAPIKey = "021e75b0e3380e236b4ff6031ae2dde4";
 let favesListEL = document.querySelector("#faves-list");
 let favoritesList = [];
+let breweryList = [];
+let breweryName, breweryAddress, breweryLat, breweryLon;
+let tempObject;
 let map;
 let marker, circle, lat, lon;
 
@@ -98,17 +101,25 @@ function fetchBreweryLocation(lat,lon) {
 }
 
 function filteredBreweries(data) {
+  console.log(data);
   for(let i = 0; i < data.length; i++) {
-    let breweryName = data[i].name;
-    let breweryAddress = data[i].address_1;
-    let breweryLat = data[i].latitude;
-    let breweryLon = data[i].longitude;
-    console.log(data);
-    console.log(breweryName);
-    console.log(breweryAddress);
-    console.log(breweryLat);
-    console.log(breweryLon);
+    breweryName = data[i].name;
+    breweryAddress = data[i].address_1;
+    breweryLat = data[i].latitude;
+    breweryLon = data[i].longitude;
+    // console.log(breweryName);
+    // console.log(breweryAddress);
+    // console.log(breweryLat);
+    // console.log(breweryLon);
+    tempObject = {
+      Name: breweryName,
+      Address: breweryAddress,
+      Latitude: breweryLat,
+      Longitude: breweryLon
+    }
+    breweryList.push(tempObject);
   }
+  console.log(breweryList);
 }
 
 /**
