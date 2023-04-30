@@ -86,6 +86,31 @@ function fetchUserZipCode(tempUserVal) {
     .then(getCoordinates);
 }
 
+function fetchBreweryLocation(lat,lon) {
+  let breweryURL = `https://api.openbrewerydb.org/v1/breweries?by_dist=${lat},${lon}&per_page=50`
+  fetch(breweryURL)
+    .then(function(response){
+      return response.json();
+    })
+    .then(function(data) {
+      filteredBreweries(data); 
+    })
+}
+
+function filteredBreweries(data) {
+  for(let i = 0; i < data.length; i++) {
+    let breweryName = data[i].name;
+    let breweryAddress = data[i].address_1;
+    let breweryLat = data[i].latitude;
+    let breweryLon = data[i].longitude;
+    console.log(data);
+    console.log(breweryName);
+    console.log(breweryAddress);
+    console.log(breweryLat);
+    console.log(breweryLon);
+  }
+}
+
 /**
  * getting coordinates as a reference point
  * @param {*} allData
@@ -103,6 +128,7 @@ function getCoordinates(allData) {
   };
   // console.log(referenceLocation);
   clearPreviousMap(10);
+  fetchBreweryLocation(lat,lon);
 }
 
 /**
