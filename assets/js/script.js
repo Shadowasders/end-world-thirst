@@ -18,7 +18,7 @@ let marker, circle, lat, lon;
 // ====================================================== //
 
 /**
- * favorites loads upon refresh
+ * favorites list loads upon refresh
  */
 function init() {
   let tempVal = localStorage.getItem("input");
@@ -59,12 +59,11 @@ function renderFavorites() {
     favoritesButton.setAttribute("class", "faves-btn");
     favesListEL.appendChild(favoritesButton);
 
-    favoritesButton.addEventListener("click", function(){
-      fetchUserZipCode(favoritesButton.value); 
-    })
+    favoritesButton.addEventListener("click", function () {
+      fetchUserZipCode(favoritesButton.value);
+    });
   }
 }
-
 
 /**
  * user input validation
@@ -89,34 +88,39 @@ function fetchUserZipCode(tempUserVal) {
     .then(getCoordinates);
 }
 
-function fetchBreweryLocation(lat,lon) {
-  let breweryURL = `https://api.openbrewerydb.org/v1/breweries?by_dist=${lat},${lon}&per_page=50`
+/**
+ *  fetch data from brewery API
+ * @param {*} lat
+ * @param {*} lon
+ */
+function fetchBreweryLocation(lat, lon) {
+  let breweryURL = `https://api.openbrewerydb.org/v1/breweries?by_dist=${lat},${lon}&per_page=50`;
   fetch(breweryURL)
-    .then(function(response){
+    .then(function (response) {
       return response.json();
     })
-    .then(function(data) {
-      filteredBreweries(data); 
-    })
+    .then(function (data) {
+      filteredBreweries(data);
+    });
 }
 
+/**
+ * filtering out necessary data for distance calculation
+ * @param {*} data
+ */
 function filteredBreweries(data) {
   console.log(data);
-  for(let i = 0; i < data.length; i++) {
+  for (let i = 0; i < data.length; i++) {
     breweryName = data[i].name;
     breweryAddress = data[i].address_1;
     breweryLat = data[i].latitude;
     breweryLon = data[i].longitude;
-    // console.log(breweryName);
-    // console.log(breweryAddress);
-    // console.log(breweryLat);
-    // console.log(breweryLon);
     tempObject = {
       Name: breweryName,
       Address: breweryAddress,
       Latitude: breweryLat,
-      Longitude: breweryLon
-    }
+      Longitude: breweryLon,
+    };
     breweryList.push(tempObject);
   }
   console.log(breweryList);
@@ -137,9 +141,9 @@ function getCoordinates(allData) {
     lat: lat,
     lon: lon,
   };
-  // console.log(referenceLocation);
+
   clearPreviousMap(10);
-  fetchBreweryLocation(lat,lon);
+  fetchBreweryLocation(lat, lon);
 }
 
 /**
