@@ -1,28 +1,39 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+/*header*/
+
 .topbeer {
   background-image: url("../images/fred-moon-0yqa0rMCsYk-unsplash.jpg");
   background-size: cover;
   background-position: center;
 }
 
-.top-title {
-  font-family:Georgia, 'Times New Roman', Times, serif;
-  color: white;
-  font-weight: bold;
-  border-radius: 10px;
-  background-color: rgba(226, 126, 12, 0.4);
-}
-
-.subtitle {
+.title-box {
   font-family: Georgia, "Times New Roman", Times, serif;
   color: white;
   font-weight: bold;
   border-radius: 10px;
-  background-color: rgba(226, 126, 12, 0.4);
-
+  background-color: rgba(226, 126, 12, 0.77);
 }
 
+/*main section*/
+/* li::marker {
+  display: none;
+}
+.nostyle {
+  list-style-type: none;
+} */
+/*TODOS
+remove markers on radio list
+style img for better responsiveness (currently section tag is causing weird spacing? Possibily rewite that?)*/
 .length {
   height: 80vh;
+  border-left:gray 2px dashed;
 }
 
 .desc {
@@ -33,16 +44,33 @@
   margin-top: 3%;
 }
 
+.interact {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: rgba(226, 126, 12, 0.4);
+}
+
+.beerimg {
+  height: 400px;
+  width: 400px;
+}
 
 ::placeholder {
   text-align: center;
 }
 /* footer */
 
-.footer {
+.footerimage {
   background-image: url('../images/fred-moon-0yqa0rMCsYk-unsplash.jpg');
   background-size: cover;
   background-position: bottom;
+  padding: 0 1.5rem 6rem;
+}
+
+.imgpad {
+  padding-top: 4rem;
 }
 
 .bottombeer {
@@ -82,3 +110,4 @@
   width: 200px;
   height: 200px;
 }
+

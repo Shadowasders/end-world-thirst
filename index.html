@@ -1,94 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <!--Bulma stylesheet-->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-    />
-      <!--Leaflet stylesheet-->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-      crossorigin=""
-    />
-     <!--Custom stylesheet-->
-		<link
-		rel="stylesheet"
-		href="./assets/css/style.css"
-	/>
-    <title>End World Thirst Landing Page</title>
-  </head>
 
-  <body>
-    <section class="hero is-medium topbeer">
-      <h1 class="hero-body">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--Bulma stylesheet-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+  <!--Leaflet stylesheet-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+  <!--Custom stylesheet-->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>End World Thirst Landing Page</title>
+</head>
 
-        <article class="container has-text-centered">
-          <p class="has-text-white is-size-1 top-title">END WORLD THIRST</p>
+<body>
+  <section class="hero is-medium topbeer">
+    <h1 class="hero-body">
 
-          <p class="subtitle has-text-white">Never Drink Alone</p>
-        </article>
-     </h1>
-    </section>
+      <article class="container has-text-centered container is-one-fifth title-box">
+        <p class="has-text-white is-size-1 top-title">END WORLD THIRST</p>
 
-    <section class="columns">
-      <div class="column is-4 has-background-warning-light length">
-        <p class="title is-size-2 has-text-centered">HOW DOES THIS WORK?</p>
-        <p class="is-size-5 has-text-left desc">1. Enter your zipcode below.</p>
-        <br />
-        <p class="is-size-5 has-text-centered desc">2. See your search results on the right!</p>
-        <br />
-        <p class="is-size-5 has-text-right desc">3. Save it to your faves!</p>
-        <section class=" tile is-parent is-vertical button-section">
-          <p class="title is-child is-warning has-text-centered pb-3">Search by zipcode</p>
-          <input class="subtitle" type="text" id="zipsubmit" placeholder="Let's Drink!"/>
-          <input type="submit" name="submit" id ="submit-btn" />
-        </section>
-      </div>
-      <div class="column is-4 has-background-warning-light length">
-        <p class="title is-size-2 has-text-centered">QUENCH WITH LOCATION:</p>
-        <section class="name"></section>
-        <section class="map">
-          <div id="map"></div>
-        </section>
-        <section class="address"></section>
-        <h2 class="subtitle has-text-weight-bold">Expand search radius:</h2>
-        <input type="radio" id="5miles" value="5 miles" class=""/>
-        <label for="5miles">5 miles</label>
-        <input type="radio" id="10miles" value="10 miles" class=""/>
-        <label for="10miles">10 miles</label>
-      </div>
-      <aside class="column is-4 has-background-warning length">
-        <p class="title is-size-2 has-text-centered">FAVOURITES!</p>
-      </aside>
-    </section>
+        <p class="subtitle has-text-white">Never Drink Alone</p>
+      </article>
+    </h1>
+  </section>
 
-    <footer class="footer">
-      <section class="columns bottombeer">
-					<section class="column is-one-fifth">
-          	<p class="has-text-centered lets-connect">LET'S<br>CONNECT:</br></p>
-          	<br/>
-					</section>
-					<section class="column is-one-fifth">
-          	<p class="has-text-centered mobile">MOBILE:</p>
-					</section>
-          <section class="column is-one-fifth">
-						<p class="has-text-centered contact">CONTACT:</p>
-					</section>
+  <section class="columns">
+    <div class="column is-4 has-background-warning-light ml-2 length">
+      <p class="title is-size-2 has-text-centered">HOW DOES THIS WORK?</p>
+      <p class="is-size-5 has-text-left desc">1. Enter your zipcode below.</p>
+      <br />
+      <p class="is-size-5 has-text-centered desc mt-4">2. See your search results on the right!</p>
+      <br />
+      <p class="is-size-5 has-text-right desc mt-4">3. Save it to your faves!</p>
+      <section class="is-vertical button-section">
+        <p class="title is-child is-warning has-text-centered pb-3">Search by zipcode</p>
+        <input class="input is-warning-dark subtitle has-text-centered interact is-center" type="text" id="zipsubmit"
+          placeholder="Thirsty?" />
+        <button class="button is-fullwidth is-medium interact" name="submit" id="submit-btn">Let's Drink!</button>
+        <img class="beerimg image m-auto" src="./assets/images/beerimg-transparent.png" />
       </section>
-    </footer>
-    <!--Leaflet script-->
-      <script
-      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-      crossorigin=""
-    ></script>
-     <!--Custom script-->
-    <script src="./assets/js/script.js"></script>
-  </body>
+    </div>
+    <div class="column is-4 has-background-warning-light length">
+      <p class="title is-size-2 has-text-centered">FIND BREWS</p>
+      <section class="name"></section>
+      <section class="map">
+        <div id="map"></div>
+      </section>
+      <section class="address"></section>
+      <div id="search-radius" class="content container">
+        <h2 class="subtitle has-text-weight-bold has-text-centered is-underlined">Choose your search radius</h2>
+        <div class="select is-fullwidth is-size-4 is-rounded" id="radius-check">
+        <select>
+          <option id="five-miles" value="5 miles" name="radius-option">
+            5 Miles
+          </option>
+          <option id="ten-miles" value="10 miles" name="radius-option">
+            10 Miles
+          </option>
+          <option id="fifteen-miles" value="10 miles" name="radius-option">
+            15 Miles
+          </option>
+        </select>
+        </div>
+      </div>
+    </div>
+    <div class="column is-4 has-background-warning length">
+      <p class="title is-size-2 has-text-centered">FAVOURITES!</p>
+      <div id="faves-list"></div>
+      <div id="clearfavesdiv">
+        <button class="button is-medium is-fullwidth is-responsive is-warning-light" id="clearbtn">Clear Faves</button>
+      </div>
+    </div>
+  </section>
+  <footer class="footerimage">
+    <section class="columns bottombeer">
+      <!-- <section class="column is-full"> -->
+      <section class="column is-one-fifth imgpad">
+        <p class="has-text-centered lets-connect">LET'S<br>CONNECT:</br></p>
+        <br />
+      </section>
+      <section class="column is-one-fifth imgpad">
+        <p class="has-text-centered mobile">MOBILE:</p>
+      </section>
+      <section class="column is-one-fifth imgpad">
+        <p class="has-text-centered contact">CONTACT:</p>
+      </section>
+      <!-- </section> -->
+    </section>
+  </footer>
+  <!--Leaflet script-->
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+  <!--Custom script-->
+  <script src="./assets/js/script.js"></script>
+</body>
+
 </html>
