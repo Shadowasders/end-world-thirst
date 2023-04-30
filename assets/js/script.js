@@ -55,12 +55,13 @@ function renderFavorites() {
     favoritesButton.value = favoritesList[i];
     favoritesButton.setAttribute("class", "faves-btn");
     favesListEL.appendChild(favoritesButton);
+
+    favoritesButton.addEventListener("click", function(){
+      fetchUserZipCode(favoritesButton.value); 
+    })
   }
 }
 
-// favesListEL.addEventListener("click", ".faves-btn", function(){
-//   fetchUserZipCode(this.value)
-// });
 
 /**
  * user input validation
