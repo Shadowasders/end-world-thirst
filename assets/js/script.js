@@ -4,6 +4,8 @@
 const btnSubmit = document.querySelector("#submit-btn");
 const userZip = document.querySelector("#zipsubmit");
 const searchRadiusEL = document.querySelector("#search-radius");
+const parentSection = document.querySelector(".parent-section");
+const radiusCheck = document.querySelector("#radius-check");
 const WeatherAPIKey = "021e75b0e3380e236b4ff6031ae2dde4";
 const fiveMileDistance = 8.04672;
 const tenMileDistance = 16.0934;
@@ -19,6 +21,15 @@ let tempObject;
 let map;
 let marker, circle, lat, lon;
 let distanceOfTempLocation, referenceLocation, tempLocation;
+let createList,
+  createListItem,
+  createListTen,
+  createListFifteen,
+  createListItemTen,
+  createListItemFifteen,
+  layerGroupFive,
+  layerGroupTen,
+  layerGroupFifteen;
 
 // ====================================================== //
 //                   -------- CODE --------               //
@@ -39,21 +50,25 @@ function init() {
 init();
 
 btnSubmit.addEventListener("click", function () {
-  console.log("Hi");
+  radiusCheck.addEventListener("change", displayLists);
   let tempUserVal;
-  console.log(userZip.value);
+  // console.log(userZip.value);
   tempUserVal = parseInt(userZip.value);
-  console.log(tempUserVal);
+  // console.log(tempUserVal);
   if (isNaN(tempUserVal)) {
     renderInvalidMessage();
   } else {
-    console.log("valid input");
+    // console.log("valid input");
   }
   // let userInput = localStorage.setItem("input", userZip.value);
   fetchUserZipCode(tempUserVal);
   favoritesList.push(tempUserVal);
   localStorage.setItem("input", JSON.stringify(favoritesList));
   renderFavorites();
+  if (radiusCheck.value !== undefined) {
+    console.log("here?");
+    displayLists();
+  }
 });
 
 console.log(favesListEL);
@@ -193,6 +208,104 @@ function calculateDistBtwCoordPairs() {
   console.log(withinFiveMiles);
   console.log(withinTenMiles);
   console.log(withinFifteenMiles);
+}
+
+/**
+ * creates list within 5 mile radius
+ */
+function createFiveList() {
+  createList = document.createElement("ul");
+  createList.textContent = "Within 5 miles:";
+  createList.setAttribute("id", "fiveMileList");
+  parentSection.appendChild(createList);
+  for (let i = 0; i < withinFiveMiles.length; i++) {
+    createListItem = document.createElement("li");
+    createListItem.textContent = withinFiveMiles[i].name;
+    createList.appendChild(createListItem);
+    createListItem.style.fontWeight = "400";
+    marker = new L.marker([withinFiveMiles[i].lat, withinFiveMiles[i].lon])
+      .bindPopup(withinFiveMiles[i].name)
+      .addTo(map);
+  }
+}
+
+/**
+ * creates list within 10 mile radius
+ */
+function createTenList() {
+  createListTen = document.createElement("ul");
+  createListTen.textContent = "Within 10 miles:";
+  createListTen.setAttribute("id", "tenMileList");
+  parentSection.appendChild(createListTen);
+  for (let i = 0; i < withinTenMiles.length; i++) {
+    createListItemTen = document.createElement("li");
+    createListItemTen.textContent = withinTenMiles[i].name;
+    createListTen.appendChild(createListItemTen);
+    createListItemTen.style.fontWeight = "400";
+    marker = new L.marker([withinTenMiles[i].lat, withinTenMiles[i].lon])
+      .bindPopup(withinTenMiles[i].name)
+      .addTo(map);
+  }
+}
+
+/**
+ * creates list within 15 mile radius
+ */
+function createFifteenList() {
+  createListFifteen = document.createElement("ul");
+  createListFifteen.textContent = "Within 15 miles:";
+  createListFifteen.setAttribute("id", "fifteenMileList");
+  parentSection.appendChild(createListFifteen);
+  for (let i = 0; i < withinFifteenMiles.length; i++) {
+    createListItemFifteen = document.createElement("li");
+    createListItemFifteen.textContent = withinFifteenMiles[i].name;
+    createListFifteen.appendChild(createListItemFifteen);
+    createListItemFifteen.style.fontWeight = "400";
+    marker = new L.marker([
+      withinFifteenMiles[i].lat,
+      withinFifteenMiles[i].lon,
+    ])
+      .bindPopup(withinFifteenMiles[i].name)
+      .addTo(map);
+  }
+}
+
+function displayLists() {
+  console.log("we changed options!!!!");
+  map.eachLayer(function (layer) {
+    map.removeLayer(layer);
+  });
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution:
+      '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  }).addTo(map);
+  eraseOtherLists();
+  if (radiusCheck.value === "5 miles") {
+    createFiveList();
+    map.setZoom(10);
+    renderSearchCircle(8500);
+    document.querySelector("#fiveMileList").style.display = "block";
+  } else if (radiusCheck.value === "10 miles") {
+    createTenList();
+    map.setZoom(9);
+    renderSearchCircle(16500);
+  } else {
+    createFifteenList();
+    map.setZoom(8.5);
+    renderSearchCircle(25000);
+    document.querySelector("#fifteenMileList").style.display = "block";
+  }
+}
+
+/**
+ *  clear each search list while navigating through options
+ */
+function eraseOtherLists() {
+  let findLists = parentSection.querySelectorAll("ul");
+  for (let i = 0; i < findLists.length; i++) {
+    findLists[i].remove();
+  }
 }
 
 /**
