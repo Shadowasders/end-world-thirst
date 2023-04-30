@@ -60,6 +60,12 @@ Using our web app is easy. Follow the easy steps below:
 
 -[Jimmy Pedone](https://github.com/JimmyPedone)
 
+## Sources:
+
+-Haversine Formula adapted from G&ouml;ran Andersson's code found [here](http://jsfiddle.net/Guffa/57gQa/) .
+
+-All map-specific functions are from Leaflet's documentation, linked above in the API list.
+
 ## License
 
 Refer to the LICENSE in the repository.
