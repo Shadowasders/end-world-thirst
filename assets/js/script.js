@@ -5,13 +5,20 @@ const btnSubmit = document.querySelector("#submit-btn");
 const userZip = document.querySelector("#zipsubmit");
 const searchRadiusEL = document.querySelector("#search-radius");
 const WeatherAPIKey = "021e75b0e3380e236b4ff6031ae2dde4";
+const fiveMileDistance = 8.04672;
+const tenMileDistance = 16.0934;
+const fifteenMileDistance = 24.1402;
 let favesListEL = document.querySelector("#faves-list");
 let favoritesList = [];
 let breweryList = [];
+let withinFiveMiles = [];
+let withinTenMiles = [];
+let withinFifteenMiles = [];
 let breweryName, breweryAddress, breweryLat, breweryLon;
 let tempObject;
 let map;
 let marker, circle, lat, lon;
+let distanceOfTempLocation, referenceLocation, tempLocation;
 
 // ====================================================== //
 //                   -------- CODE --------               //
@@ -109,21 +116,22 @@ function fetchBreweryLocation(lat, lon) {
  * @param {*} data
  */
 function filteredBreweries(data) {
-  console.log(data);
+  // console.log(data);
   for (let i = 0; i < data.length; i++) {
     breweryName = data[i].name;
     breweryAddress = data[i].address_1;
     breweryLat = data[i].latitude;
     breweryLon = data[i].longitude;
     tempObject = {
-      Name: breweryName,
-      Address: breweryAddress,
-      Latitude: breweryLat,
-      Longitude: breweryLon,
+      name: breweryName,
+      address: breweryAddress,
+      lat: breweryLat,
+      lon: breweryLon,
     };
     breweryList.push(tempObject);
   }
-  console.log(breweryList);
+  // console.log(breweryList);
+  calculateDistBtwCoordPairs();
 }
 
 /**
@@ -144,6 +152,47 @@ function getCoordinates(allData) {
 
   clearPreviousMap(10);
   fetchBreweryLocation(lat, lon);
+}
+
+/**
+ * distance between 2 points calculated
+ */
+function calculateDistBtwCoordPairs() {
+  let tempArray;
+
+  for (let i = 0; i < breweryList.length; i++) {
+    // in this case, distanceOfTempLocation is they hypotenuse (h)
+    // in Pythagoras' theorem, with h^2 = x^2 + y^2
+    kmY = 40000 / 360;
+    kmX = Math.cos((Math.PI * referenceLocation.lat) / 180) * kmY;
+    distX = Math.abs(referenceLocation.lon - breweryList[i].lon) * kmX;
+    distY = Math.abs(referenceLocation.lat - breweryList[i].lat) * kmY;
+    distanceOfTempLocation = Math.sqrt(distX ** 2 + distY ** 2);
+    tempArray = {
+      name: breweryList[i].name,
+      address: breweryList[i].address,
+      lat: breweryList[i].lat,
+      lon: breweryList[i].lon,
+      distanceFromOrigin: distanceOfTempLocation,
+    };
+
+    if (
+      0 <= distanceOfTempLocation &&
+      distanceOfTempLocation <= fifteenMileDistance
+    ) {
+      if (distanceOfTempLocation <= tenMileDistance) {
+        if (distanceOfTempLocation <= fiveMileDistance) {
+          withinFiveMiles.push(tempArray);
+        }
+        withinTenMiles.push(tempArray);
+      }
+      withinFifteenMiles.push(tempArray);
+    }
+    // distanceAndBoolean.push(tempArray);
+  }
+  console.log(withinFiveMiles);
+  console.log(withinTenMiles);
+  console.log(withinFifteenMiles);
 }
 
 /**
