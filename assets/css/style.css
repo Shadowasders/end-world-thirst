@@ -24,6 +24,14 @@ body {
 /*main section*/
 /*TODOS
 style img for better responsiveness (currently section tag is causing weird spacing? Possibily rewite that?)*/
+ul li {
+  list-style-type: none;
+}
+/*Working on setting within text to be underlined only*/
+ul li:nth-of-type(1) {
+  padding-top: 3%;
+}
+
 .length {
   height: 80vh;
   border-left:gray 2px dashed;
@@ -110,3 +118,6 @@ style img for better responsiveness (currently section tag is causing weird spac
   border-radius: .55em;
 }
 
+/*Media Queries here
+MQ notes
+set size of list elements on smaller sizes to be normal sized (research bulma classes to find this?) Might have to be js??*/
