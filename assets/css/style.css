@@ -22,14 +22,7 @@ body {
 }
 
 /*main section*/
-/* li::marker {
-  display: none;
-}
-.nostyle {
-  list-style-type: none;
-} */
 /*TODOS
-remove markers on radio list
 style img for better responsiveness (currently section tag is causing weird spacing? Possibily rewite that?)*/
 .length {
   height: 80vh;
@@ -60,6 +53,17 @@ style img for better responsiveness (currently section tag is causing weird spac
 ::placeholder {
   text-align: center;
 }
+
+.overflow{
+  overflow: auto;
+}
+
+#map {
+  width: 300px;
+  height: 250px;
+}
+
+
 /* footer */
 
 .footerimage {
@@ -106,7 +110,3 @@ style img for better responsiveness (currently section tag is causing weird spac
   border-radius: .55em;
 }
 
-#map {
-  width: 200px;
-  height: 200px;
-}
