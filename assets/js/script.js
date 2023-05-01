@@ -3,9 +3,9 @@
 // ====================================================== //
 const btnSubmit = document.querySelector("#submit-btn");
 const userZip = document.querySelector("#zipsubmit");
-const searchRadiusEL = document.querySelector("#search-radius");
 const parentSection = document.querySelector(".parent-section");
 const radiusCheck = document.querySelector("#radius-check");
+const btnParentEl = document.querySelector(".btn-parent");
 const WeatherAPIKey = "021e75b0e3380e236b4ff6031ae2dde4";
 const fiveMileDistance = 8.04672;
 const tenMileDistance = 16.0934;
@@ -96,7 +96,8 @@ function renderInvalidMessage() {
   warningMessage = document.createElement("p");
   warningMessage.style.color = "red";
   warningMessage.textContent = "Please enter a valid zipcode.";
-  searchRadiusEL.appendChild(warningMessage);
+  // warningMessage.style.paddingBottom = "16px";
+  btnParentEl.insertBefore(warningMessage, btnSubmit);
 }
 
 /**
