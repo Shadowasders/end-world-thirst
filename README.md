@@ -69,4 +69,3 @@ Using our web app is easy. Follow the easy steps below:
 ## License
 
 Refer to the LICENSE in the repository.
-
