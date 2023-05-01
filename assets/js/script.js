@@ -219,11 +219,17 @@ function createFiveList() {
   createList = document.createElement("ul");
   createList.textContent = "Within 5 miles:";
   createList.setAttribute("id", "fiveMileList");
+  createList.setAttribute("class", "has-text-weight-bold p-3");
   parentSection.appendChild(createList);
   for (let i = 0; i < withinFiveMiles.length; i++) {
     createListItem = document.createElement("li");
     createListItem.textContent = withinFiveMiles[i].name;
+    createListItem.setAttribute("class", "title")
+    createListItemAddy = document.createElement("p")
+    createListItemAddy.setAttribute("class", "is-italic subtitle")
+    createListItemAddy.textContent = withinFiveMiles[i].address;
     createList.appendChild(createListItem);
+    createListItem.appendChild(createListItemAddy);
     createListItem.style.fontWeight = "400";
     marker = new L.marker([withinFiveMiles[i].lat, withinFiveMiles[i].lon])
       .bindPopup(withinFiveMiles[i].name)
@@ -238,11 +244,17 @@ function createTenList() {
   createListTen = document.createElement("ul");
   createListTen.textContent = "Within 10 miles:";
   createListTen.setAttribute("id", "tenMileList");
+  createListTen.setAttribute("class", "has-text-weight-bold p-3");
   parentSection.appendChild(createListTen);
   for (let i = 0; i < withinTenMiles.length; i++) {
     createListItemTen = document.createElement("li");
     createListItemTen.textContent = withinTenMiles[i].name;
+    createListItemTen.setAttribute("class", "title");
+    createListItemTenAddy = document.createElement("p");
+    createListItemTenAddy.setAttribute("class", "is-italic subtitle");
+    createListItemTenAddy.textContent = withinTenMiles[i].address;
     createListTen.appendChild(createListItemTen);
+    createListItemTen.appendChild(createListItemTenAddy);
     createListItemTen.style.fontWeight = "400";
     marker = new L.marker([withinTenMiles[i].lat, withinTenMiles[i].lon])
       .bindPopup(withinTenMiles[i].name)
@@ -257,11 +269,17 @@ function createFifteenList() {
   createListFifteen = document.createElement("ul");
   createListFifteen.textContent = "Within 15 miles:";
   createListFifteen.setAttribute("id", "fifteenMileList");
+  createListFifteen.setAttribute("class", "has-text-weight-bold p-3");
   parentSection.appendChild(createListFifteen);
   for (let i = 0; i < withinFifteenMiles.length; i++) {
     createListItemFifteen = document.createElement("li");
     createListItemFifteen.textContent = withinFifteenMiles[i].name;
+    createListItemFifteen.setAttribute("class", "title");
+    createListItemFifteenAddy = document.createElement("p");
+    createListItemFifteenAddy.setAttribute("class", "is-italic subtitle");
+    createListItemFifteenAddy.textContent = withinFifteenMiles[i].address;
     createListFifteen.appendChild(createListItemFifteen);
+    createListItemFifteen.appendChild(createListItemFifteenAddy);
     createListItemFifteen.style.fontWeight = "400";
     marker = new L.marker([
       withinFifteenMiles[i].lat,
