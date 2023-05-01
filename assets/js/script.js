@@ -96,7 +96,8 @@ function renderInvalidMessage() {
   warningMessage = document.createElement("p");
   warningMessage.style.color = "red";
   warningMessage.textContent = "Please enter a valid zipcode.";
-  // warningMessage.style.paddingBottom = "16px";
+  warningMessage.style.marginTop = "0px";
+  document.querySelector("#zipsubmit").style.marginBottom = "0px";
   btnParentEl.insertBefore(warningMessage, btnSubmit);
 }
 
