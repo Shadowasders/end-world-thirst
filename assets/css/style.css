@@ -91,6 +91,11 @@ style img for better responsiveness (currently section tag is causing weird spac
   border-radius: .55em;
 }
 
+.lets-connect:hover {
+  background-color: rgba(226, 126, 12);
+  box-shadow: 0 0 10px white;
+}
+
 .contact {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 1.2rem;
