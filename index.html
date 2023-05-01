@@ -42,10 +42,14 @@
         <input class="input is-warning-dark subtitle has-text-centered interact is-center" type="text" id="zipsubmit"
           placeholder="Thirsty?" />
         <button class="button is-fullwidth is-medium interact" name="submit" id="submit-btn">Let's Drink!</button>
-        <img class="beerimg image m-auto" src="./assets/images/beerimg-transparent.png" />
+        <div class="columun is-4-tablet is-6-desktop">
+          <div class="image has-background-warning-light">
+            <img class="beerimg image m-auto" src="./assets/images/beerimg-transparent.png" />
+          </div>
+        </div>  
       </section>
     </div>
-    <div class="column is-4 has-background-warning-light length parent-section overflow">
+    <div class="column is-4 has-background-warning-light length  overflow">
       <p class="title is-size-2 has-text-centered">FIND BREWS</p>
       <section class="name"></section>
         <div id="map" class="m-auto"></div>
@@ -55,6 +59,7 @@
         <h2 class="subtitle has-text-weight-bold has-text-centered is-underlined">Choose your search radius</h2>
         <div class="select is-fullwidth is-size-4 is-rounded">
         <select id="radius-check">
+          <option id="baseline" value="0 miles" name="radius-option">Select a range</option>
           <option id="five-miles" value="5 miles" name="radius-option">
             5 Miles
           </option>
@@ -65,6 +70,7 @@
             15 Miles
           </option>
         </select>
+        <div class="parent-section"></div>
         </div>
       </div>
     </div>
