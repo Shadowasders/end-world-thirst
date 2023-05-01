@@ -21,6 +21,7 @@ let tempObject;
 let map;
 let marker, circle, lat, lon;
 let distanceOfTempLocation, referenceLocation, tempLocation;
+let warningMessage;
 let createList,
   createListItem,
   createListTen,
@@ -63,13 +64,11 @@ btnSubmit.addEventListener("click", function () {
   if (isNaN(tempUserVal)) {
     renderInvalidMessage();
   } else {
-    // console.log("valid input");
     fetchUserZipCode(tempUserVal);
     favoritesList.push(tempUserVal);
     localStorage.setItem("input", JSON.stringify(favoritesList));
     renderFavorites();
   }
-  // let userInput = localStorage.setItem("input", userZip.value);
 });
 
 console.log(favesListEL);
@@ -83,7 +82,13 @@ function renderFavorites() {
     favesListEL.appendChild(favoritesButton);
 
     favoritesButton.addEventListener("click", function () {
+      eraseOtherLists();
+      withinFiveMiles = [];
+      withinTenMiles = [];
+      withinFifteenMiles = [];
+      breweryList = [];
       fetchUserZipCode(favoritesButton.value);
+      radiusCheck.addEventListener("change", displayLists);
     });
   }
 }
@@ -92,14 +97,20 @@ function renderFavorites() {
  * user input validation
  */
 function renderInvalidMessage() {
-  let warningMessage;
   warningMessage = document.createElement("p");
+  warningMessage.setAttribute("class", "warningMsg")
   warningMessage.style.color = "red";
   warningMessage.textContent = "Please enter a valid zipcode.";
   warningMessage.style.marginTop = "0px";
   document.querySelector("#zipsubmit").style.marginBottom = "0px";
   btnParentEl.insertBefore(warningMessage, btnSubmit);
+  setInterval(clearWarning, 2000);
 }
+
+function clearWarning() {
+  warningMessage.remove();
+  document.querySelector("#zipsubmit").style.marginBottom = "24px";
+};
 
 /**
  * fetch data using zip code
