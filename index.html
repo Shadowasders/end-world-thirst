@@ -10,10 +10,10 @@
   <!--Leaflet stylesheet-->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+  <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!--Custom stylesheet-->
   <link rel="stylesheet" href="./assets/css/style.css" />
-  <!-- Font Awesome Links -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>End World Thirst Landing Page</title>
 </head>
 
@@ -52,6 +52,7 @@
     <div class="column is-4 has-background-warning-light length  overflow">
       <p class="title is-size-2 has-text-centered">FIND BREWS</p>
       <section class="name"></section>
+      <section class="column map is-narrow">
         <div id="map" class="m-auto"></div>
       </section>
       <section class="address"></section>
@@ -75,8 +76,8 @@
       </div>
     </div>
     <div class="column is-4 has-background-warning length">
-      <!-- FONT AWESOME ICON HERE -->
-      <p class="title is-size-2 has-text-centered">FAVOURITES! <i class="fa-solid fa-heart" style="color: #e27e0c;"></i></p>
+      <p class="title is-size-2 has-text-centered">FAVOURITES!<i class="fa-solid fa-heart" style="color: #e27e0c;"></i>
+      </p>
       <div id="faves-list"></div>
       <div id="clearfavesdiv">
         <button class="button is-medium is-fullwidth is-responsive is-warning-light" id="clearbtn">Clear Faves</button>
@@ -85,6 +86,7 @@
   </section>
   <footer class="footerimage">
     <section class="columns bottombeer">
+      <!-- <section class="column is-full"> -->
       <section class="column is-one-fifth imgpad">
         <p class="has-text-centered lets-connect">LET'S<br>CONNECT:</br></p>
         <br />
@@ -95,6 +97,7 @@
       <section class="column is-one-fifth imgpad">
         <p class="has-text-centered contact">CONTACT:</p>
       </section>
+      <!-- </section> -->
     </section>
   </footer>
   <!--Leaflet script-->
