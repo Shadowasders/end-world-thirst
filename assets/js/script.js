@@ -64,12 +64,12 @@ btnSubmit.addEventListener("click", function () {
     renderInvalidMessage();
   } else {
     // console.log("valid input");
+    fetchUserZipCode(tempUserVal);
+    favoritesList.push(tempUserVal);
+    localStorage.setItem("input", JSON.stringify(favoritesList));
+    renderFavorites();
   }
   // let userInput = localStorage.setItem("input", userZip.value);
-  fetchUserZipCode(tempUserVal);
-  favoritesList.push(tempUserVal);
-  localStorage.setItem("input", JSON.stringify(favoritesList));
-  renderFavorites();
 });
 
 console.log(favesListEL);
@@ -225,9 +225,9 @@ function createFiveList() {
   for (let i = 0; i < withinFiveMiles.length; i++) {
     createListItem = document.createElement("li");
     createListItem.textContent = withinFiveMiles[i].name;
-    createListItem.setAttribute("class", "title")
-    createListItemAddy = document.createElement("p")
-    createListItemAddy.setAttribute("class", "is-italic subtitle")
+    createListItem.setAttribute("class", "title");
+    createListItemAddy = document.createElement("p");
+    createListItemAddy.setAttribute("class", "is-italic subtitle");
     createListItemAddy.textContent = withinFiveMiles[i].address;
     createList.appendChild(createListItem);
     createListItem.appendChild(createListItemAddy);
