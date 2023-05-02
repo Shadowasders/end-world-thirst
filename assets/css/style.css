@@ -20,7 +20,7 @@ body {
   border-radius: 10px;
   background-color: rgba(226, 126, 12, 0.77);
   text-decoration: underline;
-  text-decoration-color: #ffe4c4; 
+  text-decoration-color: #ffe4c4;
 }
 
 .subtitle {
@@ -39,10 +39,22 @@ style img for better responsiveness (currently section tag is causing weird spac
 
 ul li {
   list-style-type: none;
+  background: url("/assets/images/heart-icon.png") no-repeat 7px 7px;
+  padding-top: 10px;
+  padding-left: 60px;
+}
+
+ul li:hover {
+  background: url("/assets/images/heart-filled-icon.png") no-repeat 7px 7px;
+  cursor: pointer;
 }
 /*Working on setting within text to be underlined only*/
-ul li:nth-of-type(1) {
-  padding-top: 3%;
+/* ul li:nth-of-type(1) {
+  /* padding-top: 3%;
+}  */
+
+.brewery-name {
+  margin-bottom: 0;
 }
 
 .errormsg {
@@ -57,7 +69,7 @@ ul li:nth-of-type(1) {
 
 .length {
   height: 80vh;
-  border-left:gray 2px dashed;
+  border-left: gray 2px dashed;
 }
 
 .desc {
@@ -86,7 +98,7 @@ ul li:nth-of-type(1) {
   text-align: center;
 }
 
-.overflow{
+.overflow {
   overflow: auto;
 }
 
@@ -102,7 +114,7 @@ ul li:nth-of-type(1) {
 /* footer */
 
 .footerimage {
-  background-image: url('../images/fred-moon-0yqa0rMCsYk-unsplash.jpg');
+  background-image: url("../images/fred-moon-0yqa0rMCsYk-unsplash.jpg");
   background-size: cover;
   background-position: bottom;
   padding: 0 1.5rem 6rem;
@@ -123,7 +135,7 @@ ul li:nth-of-type(1) {
   color: white;
   font-weight: bold;
   background-color: rgba(226, 126, 12, 0.77);
-  border-radius: .55em;
+  border-radius: 0.55em;
 }
 
 .lets-connect:hover {
@@ -138,7 +150,7 @@ ul li:nth-of-type(1) {
   color: white;
   font-weight: bold;
   background-color: rgba(226, 126, 12, 0.77);
-  border-radius: .55em;
+  border-radius: 0.55em;
 }
 
 .contact:hover {
@@ -147,14 +159,13 @@ ul li:nth-of-type(1) {
   cursor: pointer;
 }
 
-
 .mobile {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 1.2rem;
   color: white;
   font-weight: bold;
   background-color: rgba(226, 126, 12, 0.77);
-  border-radius: .55em;
+  border-radius: 0.55em;
 }
 
 .mobile:hover {
