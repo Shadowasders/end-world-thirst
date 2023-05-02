@@ -3,6 +3,7 @@
 // ====================================================== //
 const btnSubmit = document.querySelector("#submit-btn");
 const userZip = document.querySelector("#zipsubmit");
+const clearButton = document.querySelector("#clearbtn");
 const parentSection = document.querySelector(".parent-section");
 const radiusCheck = document.querySelector("#radius-check");
 const btnParentEl = document.querySelector(".btn-parent");
@@ -110,6 +111,11 @@ function renderInvalidMessage() {
 function clearWarning() {
   errorMessage.style.color = "transparent";
 };
+
+clearButton.addEventListener("click", function() {
+  favesListEL.innerHTML = "";
+  favoritesList = [];
+});
 
 /**
  * fetch data using zip code
