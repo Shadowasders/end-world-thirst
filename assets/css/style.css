@@ -39,13 +39,13 @@ style img for better responsiveness (currently section tag is causing weird spac
 
 ul li {
   list-style-type: none;
-  background: url("/assets/images/heart-icon.png") no-repeat 7px 7px;
+  background: url("../images/heart-icon.png") no-repeat 7px 7px;
   padding-top: 10px;
   padding-left: 60px;
 }
 
 ul li:hover {
-  background: url("/assets/images/heart-filled-icon.png") no-repeat 7px 7px;
+  background: url("../images/heart-filled-icon.png") no-repeat 7px 7px;
   cursor: pointer;
 }
 /*Working on setting within text to be underlined only*/
