@@ -18,7 +18,7 @@ let withinFiveMiles = [];
 let withinTenMiles = [];
 let withinFifteenMiles = [];
 let errorMessage = document.querySelector(".errormsg");
-let breweryName, breweryAddress, breweryLat, breweryLon;
+let breweryName, breweryAddress, breweryLat, breweryLon, breweryURL;
 let tempObject;
 let map;
 let marker, circle, lat, lon;
@@ -154,11 +154,13 @@ function filteredBreweries(data) {
     breweryAddress = data[i].address_1;
     breweryLat = data[i].latitude;
     breweryLon = data[i].longitude;
+    breweryURL = data[i].website_url;
     tempObject = {
       name: breweryName,
       address: breweryAddress,
       lat: breweryLat,
       lon: breweryLon,
+      url: breweryURL,
     };
     breweryList.push(tempObject);
   }
@@ -175,8 +177,6 @@ function getCoordinates(allData) {
   console.log(y);
   lat = y.lat;
   lon = y.lon;
-  console.log(lat);
-  console.log(lon);
   referenceLocation = {
     lat: lat,
     lon: lon,
@@ -205,6 +205,7 @@ function calculateDistBtwCoordPairs() {
       address: breweryList[i].address,
       lat: breweryList[i].lat,
       lon: breweryList[i].lon,
+      url: breweryList[i].url,
       distanceFromOrigin: distanceOfTempLocation,
     };
 
