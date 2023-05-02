@@ -33,9 +33,6 @@ body {
 /*main section*/
 /*TODOS
 style img for better responsiveness (currently section tag is causing weird spacing? Possibily rewite that?)*/
-.icon {
-  width: 300px;
-}
 
 ul li {
   list-style-type: none;
@@ -48,10 +45,23 @@ ul li:hover {
   background: url("../images/heart-filled-icon.png") no-repeat 7px 7px;
   cursor: pointer;
 }
-/*Working on setting within text to be underlined only*/
-/* ul li:nth-of-type(1) {
-  /* padding-top: 3%;
-}  */
+
+#map {
+  width: 400px;
+  height: 300px;
+}
+
+#zipsubmit {
+  margin-bottom: 0;
+}
+
+#faves-list a {
+  padding: 1% 2%;
+}
+
+.icon {
+  width: 300px;
+}
 
 .brewery-name {
   margin-bottom: 0;
@@ -63,9 +73,6 @@ ul li:hover {
   color: transparent;
 }
 
-#zipsubmit {
-  margin-bottom: 0;
-}
 
 .length {
   height: 80vh;
@@ -101,11 +108,6 @@ ul li:hover {
 .overflow {
   overflow-y: auto;
   overflow-x: hidden;
-}
-
-#map {
-  width: 400px;
-  height: 300px;
 }
 
 .cuswidth {
@@ -186,4 +188,13 @@ ul li:hover {
 
 /*Media Queries here
 MQ notes
-set size of list elements on smaller sizes to be normal sized (research bulma classes to find this?) Might have to be js??*/
+Move instructions to be centered on smaller sizes? (might be a js issue since silly bulma texts)*/
+@media (max-width: 425px) {
+    .has-text-left, .has-text-right {
+      text-align: center!important;
+    }
+
+    #faves-list {
+      text-align: center;
+    }
+}
