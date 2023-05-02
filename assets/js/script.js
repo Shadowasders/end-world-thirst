@@ -11,6 +11,7 @@ const WeatherAPIKey = "021e75b0e3380e236b4ff6031ae2dde4";
 const fiveMileDistance = 8.04672;
 const tenMileDistance = 16.0934;
 const fifteenMileDistance = 24.1402;
+const listItem = document.querySelectorAll("li");
 let favesListEL = document.querySelector("#faves-list");
 let favoritesList = [];
 let breweryList = [];
@@ -31,7 +32,9 @@ let createList,
   createListItemTen,
   createListItemFifteen,
   anchorTag,
-  anchorTagText;
+  anchorTagText,
+  inspect,
+  breweryTitle;
 
 // ====================================================== //
 //                   -------- CODE --------               //
@@ -44,9 +47,9 @@ function init() {
   let tempVal = localStorage.getItem("input");
   if (tempVal) {
     // if exists
-    favoritesList = JSON.parse(tempVal);
+    // favoritesList = JSON.parse(tempVal);
   }
-  renderFavorites();
+  // renderFavorites();
 }
 
 init();
@@ -67,18 +70,18 @@ btnSubmit.addEventListener("click", function () {
     renderInvalidMessage();
   } else {
     fetchUserZipCode(tempUserVal);
-    if (favoritesList.includes(tempUserVal) === false) {
-      favoritesList.push(tempUserVal);
-    }
-    localStorage.setItem("input", JSON.stringify(favoritesList));
-    renderFavorites();
+    // if (favoritesList.includes(tempUserVal) === false) {
+    //   favoritesList.push(tempUserVal);
+    // }
+    // localStorage.setItem("input", JSON.stringify(favoritesList));
+    // renderFavorites();
   }
 });
 
-console.log(favesListEL);
+// console.log(favesListEL);
 function renderFavorites() {
   favesListEL.innerHTML = "";
-  tempUserVal = parseInt(userZip.value);
+  // tempUserVal = parseInt(userZip.value);
   for (let i = 0; i < favoritesList.length; i++) {
     let favoritesButton = document.createElement("button");
     favoritesButton.textContent = favoritesList[i];
@@ -229,10 +232,13 @@ function calculateDistBtwCoordPairs() {
  * creates list within 5 mile radius
  */
 function createFiveList() {
+  let tempChoice;
   createList = document.createElement("ul");
   createList.setAttribute("id", "fiveMileList");
   createList.setAttribute("class", "has-text-weight-bold p-3");
   parentSection.appendChild(createList);
+  // createList.style.listStyleImage = "url('./assets/images/heart-icon.png')";
+
   for (let i = 0; i < withinFiveMiles.length; i++) {
     createListItemFive = document.createElement("li");
     createListItemFive.setAttribute("class", "title");
@@ -244,13 +250,28 @@ function createFiveList() {
       anchorTag.appendChild(anchorTagText);
       createListItemFive.appendChild(anchorTag);
     } else {
-      createListItemFive.textContent = withinFiveMiles[i].name;
+      breweryTitle = document.createElement("p");
+      breweryTitle.textContent = withinFiveMiles[i].name;
+      breweryTitle.setAttribute("class", "brewery-name");
+      createListItemFive.appendChild(breweryTitle);
     }
-    createListItemFiveAddy = document.createElement("p");
+    let createListItemFiveAddy = document.createElement("p");
     createListItemFiveAddy.setAttribute("class", "is-italic subtitle");
     createListItemFiveAddy.textContent = withinFiveMiles[i].address;
     createListItemFive.appendChild(createListItemFiveAddy);
     createListItemFive.style.fontWeight = "400";
+    createListItemFive.addEventListener("click", function (e) {
+      if (withinFiveMiles[i].url !== null) {
+        console.log(favoritesList);
+        tempChoice = e.currentTarget.querySelector("a").textContent;
+        console.log(tempChoice);
+        favoritesList.push(tempChoice);
+      } else {
+        tempChoice = e.currentTarget.querySelector(".brewery-name").textContent;
+        favoritesList.push(tempChoice);
+      }
+    });
+
     marker = new L.marker([withinFiveMiles[i].lat, withinFiveMiles[i].lon])
       .bindPopup(withinFiveMiles[i].name)
       .addTo(map);
@@ -326,6 +347,9 @@ function createFifteenList() {
   }
 }
 
+/**
+ * map and marker display depends on user dropdown choice
+ */
 function displayLists() {
   console.log("we changed options!!!!");
   map.eachLayer(function (layer) {
