@@ -29,7 +29,9 @@ let createList,
   createListTen,
   createListFifteen,
   createListItemTen,
-  createListItemFifteen;
+  createListItemFifteen,
+  anchorTag,
+  anchorTagText;
 
 // ====================================================== //
 //                   -------- CODE --------               //
@@ -108,7 +110,7 @@ function clearWarning() {
   errorMessage.style.color = "transparent";
 }
 
-clearButton.addEventListener("click", function() {
+clearButton.addEventListener("click", function () {
   favesListEL.innerHTML = "";
   favoritesList = [];
 });
@@ -227,20 +229,23 @@ function calculateDistBtwCoordPairs() {
  */
 function createFiveList() {
   createList = document.createElement("ul");
-  createList.textContent = "Within 5 miles:";
   createList.setAttribute("id", "fiveMileList");
   createList.setAttribute("class", "has-text-weight-bold p-3");
   parentSection.appendChild(createList);
   for (let i = 0; i < withinFiveMiles.length; i++) {
-    createListItem = document.createElement("li");
-    createListItem.textContent = withinFiveMiles[i].name;
-    createListItem.setAttribute("class", "title");
-    createListItemAddy = document.createElement("p");
-    createListItemAddy.setAttribute("class", "is-italic subtitle");
-    createListItemAddy.textContent = withinFiveMiles[i].address;
-    createList.appendChild(createListItem);
-    createListItem.appendChild(createListItemAddy);
-    createListItem.style.fontWeight = "400";
+    createListItemFive = document.createElement("li");
+    createListItemFive.setAttribute("class", "title");
+    createList.appendChild(createListItemFive);
+    anchorTag = document.createElement("a");
+    anchorTag.setAttribute("href", withinFiveMiles[i].url);
+    anchorTagText = document.createTextNode(withinFiveMiles[i].name);
+    anchorTag.appendChild(anchorTagText);
+    createListItemFive.appendChild(anchorTag);
+    createListItemFiveAddy = document.createElement("p");
+    createListItemFiveAddy.setAttribute("class", "is-italic subtitle");
+    createListItemFiveAddy.textContent = withinFiveMiles[i].address;
+    createListItemFive.appendChild(createListItemFiveAddy);
+    createListItemFive.style.fontWeight = "400";
     marker = new L.marker([withinFiveMiles[i].lat, withinFiveMiles[i].lon])
       .bindPopup(withinFiveMiles[i].name)
       .addTo(map);
@@ -252,18 +257,21 @@ function createFiveList() {
  */
 function createTenList() {
   createListTen = document.createElement("ul");
-  createListTen.textContent = "Within 10 miles:";
   createListTen.setAttribute("id", "tenMileList");
   createListTen.setAttribute("class", "has-text-weight-bold p-3");
   parentSection.appendChild(createListTen);
   for (let i = 0; i < withinTenMiles.length; i++) {
     createListItemTen = document.createElement("li");
-    createListItemTen.textContent = withinTenMiles[i].name;
     createListItemTen.setAttribute("class", "title");
+    createListTen.appendChild(createListItemTen);
+    anchorTag = document.createElement("a");
+    anchorTag.setAttribute("href", withinTenMiles[i].url);
+    anchorTagText = document.createTextNode(withinTenMiles[i].name);
+    anchorTag.appendChild(anchorTagText);
+    createListItemTen.appendChild(anchorTag);
     createListItemTenAddy = document.createElement("p");
     createListItemTenAddy.setAttribute("class", "is-italic subtitle");
     createListItemTenAddy.textContent = withinTenMiles[i].address;
-    createListTen.appendChild(createListItemTen);
     createListItemTen.appendChild(createListItemTenAddy);
     createListItemTen.style.fontWeight = "400";
     marker = new L.marker([withinTenMiles[i].lat, withinTenMiles[i].lon])
@@ -277,18 +285,21 @@ function createTenList() {
  */
 function createFifteenList() {
   createListFifteen = document.createElement("ul");
-  createListFifteen.textContent = "Within 15 miles:";
   createListFifteen.setAttribute("id", "fifteenMileList");
   createListFifteen.setAttribute("class", "has-text-weight-bold p-3");
   parentSection.appendChild(createListFifteen);
   for (let i = 0; i < withinFifteenMiles.length; i++) {
     createListItemFifteen = document.createElement("li");
-    createListItemFifteen.textContent = withinFifteenMiles[i].name;
     createListItemFifteen.setAttribute("class", "title");
+    createListFifteen.appendChild(createListItemFifteen);
+    anchorTag = document.createElement("a");
+    anchorTag.setAttribute("href", withinFifteenMiles[i].url);
+    anchorTagText = document.createTextNode(withinFifteenMiles[i].name);
+    anchorTag.appendChild(anchorTagText);
+    createListItemFifteen.appendChild(anchorTag);
     createListItemFifteenAddy = document.createElement("p");
     createListItemFifteenAddy.setAttribute("class", "is-italic subtitle");
     createListItemFifteenAddy.textContent = withinFifteenMiles[i].address;
-    createListFifteen.appendChild(createListItemFifteen);
     createListItemFifteen.appendChild(createListItemFifteenAddy);
     createListItemFifteen.style.fontWeight = "400";
     marker = new L.marker([
