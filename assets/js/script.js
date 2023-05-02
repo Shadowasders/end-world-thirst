@@ -28,10 +28,7 @@ let createList,
   createListTen,
   createListFifteen,
   createListItemTen,
-  createListItemFifteen,
-  layerGroupFive,
-  layerGroupTen,
-  layerGroupFifteen;
+  createListItemFifteen;
 
 // ====================================================== //
 //                   -------- CODE --------               //
@@ -93,7 +90,6 @@ function renderFavorites() {
       fetchUserZipCode(favoritesButton.value);
       radiusCheck.addEventListener("change", displayLists);
     });
-
   }
 }
 
@@ -106,7 +102,7 @@ function renderInvalidMessage() {
 
 function clearWarning() {
   errorMessage.style.color = "transparent";
-};
+}
 
 /**
  * fetch data using zip code
@@ -215,9 +211,6 @@ function calculateDistBtwCoordPairs() {
     }
     // distanceAndBoolean.push(tempArray);
   }
-  console.log(withinFiveMiles);
-  console.log(withinTenMiles);
-  console.log(withinFifteenMiles);
 }
 
 /**
