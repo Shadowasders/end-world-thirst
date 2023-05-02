@@ -99,12 +99,17 @@ ul li:hover {
 }
 
 .overflow {
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 #map {
   width: 400px;
   height: 300px;
+}
+
+.cuswidth {
+  width: 80%;
 }
 
 /* .map-wrapper {
