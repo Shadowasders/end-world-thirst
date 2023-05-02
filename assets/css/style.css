@@ -24,6 +24,10 @@ body {
 /*main section*/
 /*TODOS
 style img for better responsiveness (currently section tag is causing weird spacing? Possibily rewite that?)*/
+.icon {
+  width: 300px;
+}
+
 ul li {
   list-style-type: none;
 }
@@ -102,6 +106,7 @@ ul li:nth-of-type(1) {
 .lets-connect:hover {
   background-color: rgba(226, 126, 12);
   box-shadow: 0 0 10px white;
+  cursor: pointer;
 }
 
 .contact {
@@ -113,6 +118,12 @@ ul li:nth-of-type(1) {
   border-radius: .55em;
 }
 
+.contact:hover {
+  background-color: rgba(226, 126, 12);
+  box-shadow: 0 0 10px white;
+  cursor: pointer;
+}
+
 
 .mobile {
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -121,6 +132,12 @@ ul li:nth-of-type(1) {
   font-weight: bold;
   background-color: rgba(226, 126, 12, 0.77);
   border-radius: .55em;
+}
+
+.mobile:hover {
+  background-color: rgba(226, 126, 12);
+  box-shadow: 0 0 10px white;
+  cursor: pointer;
 }
 
 #map {
