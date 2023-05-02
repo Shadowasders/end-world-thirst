@@ -85,6 +85,7 @@ function renderFavorites() {
     favesListEL.appendChild(favoritesButton);
 
     favoritesButton.addEventListener("click", function () {
+      clearWarning();
       eraseOtherLists();
       withinFiveMiles = [];
       withinTenMiles = [];
