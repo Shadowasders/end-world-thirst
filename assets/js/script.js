@@ -14,6 +14,7 @@ const fifteenMileDistance = 24.1402;
 const listItem = document.querySelectorAll("li");
 let favesListEL = document.querySelector("#faves-list");
 let favoritesList = [];
+let favoritesListNamesOnly = [];
 let breweryList = [];
 let withinFiveMiles = [];
 let withinTenMiles = [];
@@ -47,7 +48,7 @@ function init() {
   // let tempVal = localStorage.getItem("input");
   if (localStorage.length !== 0) {
     // if exists
-    favoritesList = JSON.parse(localStorage.getItem("input"));
+    favoritesList = JSON.parse(localStorage.getItem("userInput"));
     renderFavorites();
   }
 }
@@ -281,19 +282,29 @@ function createFiveList() {
           name: e.currentTarget.querySelector("a").textContent,
           url: `${e.currentTarget.querySelector("a").href}`,
         };
-        if (favoritesList.includes(tempChoice) === false) {
+        if (favoritesListNamesOnly.includes(tempChoice.name) === false) {
           favoritesList.push(tempChoice);
+          favoritesListNamesOnly.push(tempChoice.name);
+          favoritesItemTag = document.createElement("a");
+          favoritesItemTag.setAttribute("href", tempChoice.url);
+          favoritesItemTagText = document.createTextNode(tempChoice.name);
+          favoritesItemTag.appendChild(favoritesItemTagText);
+          favesListEL.appendChild(favoritesItemTag);
         }
       } else {
         tempChoice = {
           name: e.currentTarget.querySelector(".brewery-name").textContent,
           url: "",
         };
-        if (favoritesList.includes(tempChoice) === false) {
+        if (favoritesListNamesOnly.includes(tempChoice.name) === false) {
           favoritesList.push(tempChoice);
+          favoritesListNamesOnly.push(tempChoice.name);
+          favoritesItem = document.createElement("p");
+          favoritesItem.textContent = tempChoice.name;
+          favesListEL.appendChild(favoritesItem);
         }
       }
-      localStorage.setItem("input", JSON.stringify(favoritesList));
+      localStorage.setItem("userInput", JSON.stringify(favoritesList));
     });
 
     marker = new L.marker([withinFiveMiles[i].lat, withinFiveMiles[i].lon])
@@ -335,18 +346,35 @@ function createTenList() {
 
     createListItemTen.addEventListener("click", function (e) {
       if (withinTenMiles[i].url !== null) {
-        tempChoice = e.currentTarget.querySelector("a").textContent;
-        if (favoritesList.includes(tempChoice) === false) {
+        tempChoice = {
+          name: e.currentTarget.querySelector("a").textContent,
+          url: `${e.currentTarget.querySelector("a").href}`,
+        };
+        if (favoritesListNamesOnly.includes(tempChoice.name) === false) {
           favoritesList.push(tempChoice);
+          favoritesListNamesOnly.push(tempChoice.name);
+          favoritesItemTag = document.createElement("a");
+          favoritesItemTag.setAttribute("href", tempChoice.url);
+          favoritesItemTagText = document.createTextNode(tempChoice.name);
+          favoritesItemTag.appendChild(favoritesItemTagText);
+          favesListEL.appendChild(favoritesItemTag);
         }
       } else {
-        tempChoice = e.currentTarget.querySelector(".brewery-name").textContent;
-        if (favoritesList.includes(tempChoice) === false) {
+        tempChoice = {
+          name: e.currentTarget.querySelector(".brewery-name").textContent,
+          url: "",
+        };
+        if (favoritesListNamesOnly.includes(tempChoice.name) === false) {
           favoritesList.push(tempChoice);
+          favoritesListNamesOnly.push(tempChoice.name);
+          favoritesItem = document.createElement("p");
+          favoritesItem.textContent = tempChoice.name;
+          favesListEL.appendChild(favoritesItem);
         }
       }
-      localStorage.setItem("input", JSON.stringify(favoritesList));
+      localStorage.setItem("userInput", JSON.stringify(favoritesList));
     });
+
     marker = new L.marker([withinTenMiles[i].lat, withinTenMiles[i].lon])
       .bindPopup(withinTenMiles[i].name)
       .addTo(map);
@@ -386,18 +414,35 @@ function createFifteenList() {
 
     createListItemFifteen.addEventListener("click", function (e) {
       if (withinFifteenMiles[i].url !== null) {
-        tempChoice = e.currentTarget.querySelector("a").textContent;
-        if (favoritesList.includes(tempChoice) === false) {
+        tempChoice = {
+          name: e.currentTarget.querySelector("a").textContent,
+          url: `${e.currentTarget.querySelector("a").href}`,
+        };
+        if (favoritesListNamesOnly.includes(tempChoice.name) === false) {
           favoritesList.push(tempChoice);
+          favoritesListNamesOnly.push(tempChoice.name);
+          favoritesItemTag = document.createElement("a");
+          favoritesItemTag.setAttribute("href", tempChoice.url);
+          favoritesItemTagText = document.createTextNode(tempChoice.name);
+          favoritesItemTag.appendChild(favoritesItemTagText);
+          favesListEL.appendChild(favoritesItemTag);
         }
       } else {
-        tempChoice = e.currentTarget.querySelector(".brewery-name").textContent;
-        if (favoritesList.includes(tempChoice) === false) {
+        tempChoice = {
+          name: e.currentTarget.querySelector(".brewery-name").textContent,
+          url: "",
+        };
+        if (favoritesListNamesOnly.includes(tempChoice.name) === false) {
           favoritesList.push(tempChoice);
+          favoritesListNamesOnly.push(tempChoice.name);
+          favoritesItem = document.createElement("p");
+          favoritesItem.textContent = tempChoice.name;
+          favesListEL.appendChild(favoritesItem);
         }
       }
-      localStorage.setItem("input", JSON.stringify(favoritesList));
+      localStorage.setItem("userInput", JSON.stringify(favoritesList));
     });
+
     marker = new L.marker([
       withinFifteenMiles[i].lat,
       withinFifteenMiles[i].lon,
