@@ -44,12 +44,12 @@ let createList,
  * favorites list loads upon refresh
  */
 function init() {
-  let tempVal = localStorage.getItem("input");
-  if (tempVal) {
+  // let tempVal = localStorage.getItem("input");
+  if (localStorage.length !== 0) {
     // if exists
-    // favoritesList = JSON.parse(tempVal);
+    favoritesList = JSON.parse(localStorage.getItem("input"));
+    renderFavorites();
   }
-  // renderFavorites();
 }
 
 init();
@@ -80,25 +80,39 @@ btnSubmit.addEventListener("click", function () {
 
 // console.log(favesListEL);
 function renderFavorites() {
-  favesListEL.innerHTML = "";
+  // favesListEL.innerHTML = "";
+  let favoritesItem, favoritesItemTag, favoritesItemTagText;
   // tempUserVal = parseInt(userZip.value);
   for (let i = 0; i < favoritesList.length; i++) {
-    let favoritesButton = document.createElement("button");
-    favoritesButton.textContent = favoritesList[i];
-    favoritesButton.value = favoritesList[i];
-    favoritesButton.setAttribute("class", "faves-btn");
-    favesListEL.appendChild(favoritesButton);
+    // let favoritesItem = document.createElement("a");
+    // let favoritesItemText = document.createTextNode('href');
+    // favoritesItem.textContent = favoritesList[i].name;
+    // // favoritesButton.value = favoritesList[i];
+    // favoritesButton.setAttribute("class", "faves-btn");
+    // favesListEL.appendChild(favoritesButton);
 
-    favoritesButton.addEventListener("click", function () {
-      clearWarning();
-      eraseOtherLists();
-      withinFiveMiles = [];
-      withinTenMiles = [];
-      withinFifteenMiles = [];
-      breweryList = [];
-      fetchUserZipCode(favoritesButton.value);
-      radiusCheck.addEventListener("change", displayLists);
-    });
+    if (favoritesList[i].url !== "") {
+      favoritesItemTag = document.createElement("a");
+      favoritesItemTag.setAttribute("href", favoritesList[i].url);
+      favoritesItemTagText = document.createTextNode(favoritesList[i].name);
+      favoritesItemTag.appendChild(favoritesItemTagText);
+      favesListEL.appendChild(favoritesItemTag);
+    } else {
+      favoritesItem = document.createElement("p");
+      favoritesItem.textContent = favoritesList[i].name;
+      favesListEL.appendChild(favoritesItem);
+    }
+
+    // favoritesButton.addEventListener("click", function () {
+    //   clearWarning();
+    //   eraseOtherLists();
+    //   withinFiveMiles = [];
+    //   withinTenMiles = [];
+    //   withinFifteenMiles = [];
+    //   breweryList = [];
+    //   fetchUserZipCode(favoritesButton.value);
+    //   radiusCheck.addEventListener("change", displayLists);
+    // });
   }
 }
 
@@ -116,6 +130,7 @@ function clearWarning() {
 clearButton.addEventListener("click", function () {
   favesListEL.innerHTML = "";
   favoritesList = [];
+  localStorage.clear();
 });
 
 /**
@@ -262,16 +277,23 @@ function createFiveList() {
     createListItemFive.style.fontWeight = "400";
     createListItemFive.addEventListener("click", function (e) {
       if (withinFiveMiles[i].url !== null) {
-        tempChoice = e.currentTarget.querySelector("a").textContent;
+        tempChoice = {
+          name: e.currentTarget.querySelector("a").textContent,
+          url: `${e.currentTarget.querySelector("a").href}`,
+        };
         if (favoritesList.includes(tempChoice) === false) {
           favoritesList.push(tempChoice);
         }
       } else {
-        tempChoice = e.currentTarget.querySelector(".brewery-name").textContent;
+        tempChoice = {
+          name: e.currentTarget.querySelector(".brewery-name").textContent,
+          url: "",
+        };
         if (favoritesList.includes(tempChoice) === false) {
           favoritesList.push(tempChoice);
         }
       }
+      localStorage.setItem("input", JSON.stringify(favoritesList));
     });
 
     marker = new L.marker([withinFiveMiles[i].lat, withinFiveMiles[i].lon])
@@ -323,6 +345,7 @@ function createTenList() {
           favoritesList.push(tempChoice);
         }
       }
+      localStorage.setItem("input", JSON.stringify(favoritesList));
     });
     marker = new L.marker([withinTenMiles[i].lat, withinTenMiles[i].lon])
       .bindPopup(withinTenMiles[i].name)
@@ -373,6 +396,7 @@ function createFifteenList() {
           favoritesList.push(tempChoice);
         }
       }
+      localStorage.setItem("input", JSON.stringify(favoritesList));
     });
     marker = new L.marker([
       withinFifteenMiles[i].lat,
