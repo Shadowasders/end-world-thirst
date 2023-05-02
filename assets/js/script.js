@@ -64,34 +64,21 @@ btnSubmit.addEventListener("click", function () {
   breweryList = [];
   radiusCheck.addEventListener("change", displayLists);
   let tempUserVal;
-  // console.log(userZip.value);
+
   tempUserVal = parseInt(userZip.value);
-  // console.log(tempUserVal);
+
   if (isNaN(tempUserVal)) {
     renderInvalidMessage();
   } else {
     fetchUserZipCode(tempUserVal);
-    // if (favoritesList.includes(tempUserVal) === false) {
-    //   favoritesList.push(tempUserVal);
-    // }
-    // localStorage.setItem("input", JSON.stringify(favoritesList));
-    // renderFavorites();
   }
 });
 
-// console.log(favesListEL);
 function renderFavorites() {
   // favesListEL.innerHTML = "";
   let favoritesItem, favoritesItemTag, favoritesItemTagText;
-  // tempUserVal = parseInt(userZip.value);
-  for (let i = 0; i < favoritesList.length; i++) {
-    // let favoritesItem = document.createElement("a");
-    // let favoritesItemText = document.createTextNode('href');
-    // favoritesItem.textContent = favoritesList[i].name;
-    // // favoritesButton.value = favoritesList[i];
-    // favoritesButton.setAttribute("class", "faves-btn");
-    // favesListEL.appendChild(favoritesButton);
 
+  for (let i = 0; i < favoritesList.length; i++) {
     if (favoritesList[i].url !== "") {
       favoritesItemTag = document.createElement("a");
       favoritesItemTag.setAttribute("href", favoritesList[i].url);
@@ -103,17 +90,6 @@ function renderFavorites() {
       favoritesItem.textContent = favoritesList[i].name;
       favesListEL.appendChild(favoritesItem);
     }
-
-    // favoritesButton.addEventListener("click", function () {
-    //   clearWarning();
-    //   eraseOtherLists();
-    //   withinFiveMiles = [];
-    //   withinTenMiles = [];
-    //   withinFifteenMiles = [];
-    //   breweryList = [];
-    //   fetchUserZipCode(favoritesButton.value);
-    //   radiusCheck.addEventListener("change", displayLists);
-    // });
   }
 }
 
@@ -240,7 +216,6 @@ function calculateDistBtwCoordPairs() {
       }
       withinFifteenMiles.push(tempArray);
     }
-    // distanceAndBoolean.push(tempArray);
   }
 }
 
@@ -253,7 +228,6 @@ function createFiveList() {
   createList.setAttribute("id", "fiveMileList");
   createList.setAttribute("class", "has-text-weight-bold p-3");
   parentSection.appendChild(createList);
-  // createList.style.listStyleImage = "url('./assets/images/heart-icon.png')";
 
   for (let i = 0; i < withinFiveMiles.length; i++) {
     createListItemFive = document.createElement("li");
