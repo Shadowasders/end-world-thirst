@@ -88,6 +88,7 @@ function renderFavorites() {
     if (favoritesList[i].url !== "") {
       favoritesItemTag = document.createElement("a");
       favoritesItemTag.setAttribute("href", favoritesList[i].url);
+      favoritesItemTag.setAttribute("target", "_blank");
       favoritesItemTagText = document.createTextNode(favoritesList[i].name);
       favoritesItemTag.appendChild(favoritesItemTagText);
       favesListEL.appendChild(favoritesItemTag);
@@ -243,6 +244,7 @@ function createFiveList() {
     if (withinFiveMiles[i].url !== null) {
       anchorTag = document.createElement("a");
       anchorTag.setAttribute("href", withinFiveMiles[i].url);
+      anchorTag.setAttribute("target", "_blank");
       anchorTagText = document.createTextNode(withinFiveMiles[i].name);
       anchorTag.appendChild(anchorTagText);
       createListItemFive.appendChild(anchorTag);
@@ -309,6 +311,7 @@ function createTenList() {
     if (withinTenMiles[i].url !== null) {
       anchorTag = document.createElement("a");
       anchorTag.setAttribute("href", withinTenMiles[i].url);
+      anchorTag.setAttribute("target", "_blank");
       anchorTagText = document.createTextNode(withinTenMiles[i].name);
       anchorTag.appendChild(anchorTagText);
       createListItemTen.appendChild(anchorTag);
@@ -377,6 +380,7 @@ function createFifteenList() {
     if (withinFifteenMiles[i].url !== null) {
       anchorTag = document.createElement("a");
       anchorTag.setAttribute("href", withinFifteenMiles[i].url);
+      anchorTag.setAttribute("target", "_blank");
       anchorTagText = document.createTextNode(withinFifteenMiles[i].name);
       anchorTag.appendChild(anchorTagText);
       createListItemFifteen.appendChild(anchorTag);
