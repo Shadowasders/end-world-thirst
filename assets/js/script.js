@@ -25,7 +25,7 @@ let marker, circle, lat, lon;
 let distanceOfTempLocation, referenceLocation, tempLocation;
 let warningMessage;
 let createList,
-  createListItem,
+  createListItemFive,
   createListTen,
   createListFifteen,
   createListItemTen,
@@ -237,11 +237,15 @@ function createFiveList() {
     createListItemFive = document.createElement("li");
     createListItemFive.setAttribute("class", "title");
     createList.appendChild(createListItemFive);
-    anchorTag = document.createElement("a");
-    anchorTag.setAttribute("href", withinFiveMiles[i].url);
-    anchorTagText = document.createTextNode(withinFiveMiles[i].name);
-    anchorTag.appendChild(anchorTagText);
-    createListItemFive.appendChild(anchorTag);
+    if (withinFiveMiles[i].url !== null) {
+      anchorTag = document.createElement("a");
+      anchorTag.setAttribute("href", withinFiveMiles[i].url);
+      anchorTagText = document.createTextNode(withinFiveMiles[i].name);
+      anchorTag.appendChild(anchorTagText);
+      createListItemFive.appendChild(anchorTag);
+    } else {
+      createListItemFive.textContent = withinFiveMiles[i].name;
+    }
     createListItemFiveAddy = document.createElement("p");
     createListItemFiveAddy.setAttribute("class", "is-italic subtitle");
     createListItemFiveAddy.textContent = withinFiveMiles[i].address;
@@ -265,11 +269,16 @@ function createTenList() {
     createListItemTen = document.createElement("li");
     createListItemTen.setAttribute("class", "title");
     createListTen.appendChild(createListItemTen);
-    anchorTag = document.createElement("a");
-    anchorTag.setAttribute("href", withinTenMiles[i].url);
-    anchorTagText = document.createTextNode(withinTenMiles[i].name);
-    anchorTag.appendChild(anchorTagText);
-    createListItemTen.appendChild(anchorTag);
+    if (withinTenMiles[i].url !== null) {
+      anchorTag = document.createElement("a");
+      anchorTag.setAttribute("href", withinTenMiles[i].url);
+      anchorTagText = document.createTextNode(withinTenMiles[i].name);
+      anchorTag.appendChild(anchorTagText);
+      createListItemTen.appendChild(anchorTag);
+    } else {
+      createListItemTen.textContent = withinTenMiles[i].name;
+    }
+
     createListItemTenAddy = document.createElement("p");
     createListItemTenAddy.setAttribute("class", "is-italic subtitle");
     createListItemTenAddy.textContent = withinTenMiles[i].address;
@@ -293,11 +302,16 @@ function createFifteenList() {
     createListItemFifteen = document.createElement("li");
     createListItemFifteen.setAttribute("class", "title");
     createListFifteen.appendChild(createListItemFifteen);
-    anchorTag = document.createElement("a");
-    anchorTag.setAttribute("href", withinFifteenMiles[i].url);
-    anchorTagText = document.createTextNode(withinFifteenMiles[i].name);
-    anchorTag.appendChild(anchorTagText);
-    createListItemFifteen.appendChild(anchorTag);
+    if (withinFifteenMiles[i].url !== null) {
+      anchorTag = document.createElement("a");
+      anchorTag.setAttribute("href", withinFifteenMiles[i].url);
+      anchorTagText = document.createTextNode(withinFifteenMiles[i].name);
+      anchorTag.appendChild(anchorTagText);
+      createListItemFifteen.appendChild(anchorTag);
+    } else {
+      createListItemFifteen.textContent = withinFifteenMiles[i].name;
+    }
+
     createListItemFifteenAddy = document.createElement("p");
     createListItemFifteenAddy.setAttribute("class", "is-italic subtitle");
     createListItemFifteenAddy.textContent = withinFifteenMiles[i].address;
