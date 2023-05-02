@@ -89,20 +89,13 @@ function renderFavorites() {
       favoritesItemTag = document.createElement("a");
       favoritesItemTag.setAttribute("href", favoritesList[i].url);
       favoritesItemTagText = document.createTextNode(favoritesList[i].name);
-      favoritesItemTag.style.fontSize = "larger";
-      // favoritesItemTag.style.padding = "5px";
-      favoritesItemTag.style.display = "inline-block";
       favoritesItemTag.appendChild(favoritesItemTagText);
       favesListEL.appendChild(favoritesItemTag);
     } else {
       favoritesItem = document.createElement("p");
       favoritesItem.textContent = favoritesList[i].name;
-      favoritesItem.style.fontSize = "larger";
-      // favoritesItem.style.padding = "5px";
-      favoritesItem.style.display = "inline-block";
       favesListEL.appendChild(favoritesItem);
     }
-    // favesListEL.style.flexWrap = "wrap";
   }
 }
 
