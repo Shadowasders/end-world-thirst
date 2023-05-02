@@ -48,7 +48,13 @@ function init() {
   // let tempVal = localStorage.getItem("input");
   if (localStorage.length !== 0) {
     // if exists
+    console.log("here");
     favoritesList = JSON.parse(localStorage.getItem("userInput"));
+
+    for (let i = 0; i < favoritesList.length; i++) {
+      favoritesListNamesOnly.push(favoritesList[i].name);
+    }
+    console.log(favoritesListNamesOnly);
     renderFavorites();
   }
 }
@@ -107,6 +113,7 @@ function clearWarning() {
 clearButton.addEventListener("click", function () {
   favesListEL.innerHTML = "";
   favoritesList = [];
+  favoritesListNamesOnly = [];
   localStorage.clear();
 });
 
