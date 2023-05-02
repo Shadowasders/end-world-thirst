@@ -262,13 +262,15 @@ function createFiveList() {
     createListItemFive.style.fontWeight = "400";
     createListItemFive.addEventListener("click", function (e) {
       if (withinFiveMiles[i].url !== null) {
-        console.log(favoritesList);
         tempChoice = e.currentTarget.querySelector("a").textContent;
-        console.log(tempChoice);
-        favoritesList.push(tempChoice);
+        if (favoritesList.includes(tempChoice) === false) {
+          favoritesList.push(tempChoice);
+        }
       } else {
         tempChoice = e.currentTarget.querySelector(".brewery-name").textContent;
-        favoritesList.push(tempChoice);
+        if (favoritesList.includes(tempChoice) === false) {
+          favoritesList.push(tempChoice);
+        }
       }
     });
 
@@ -297,7 +299,10 @@ function createTenList() {
       anchorTag.appendChild(anchorTagText);
       createListItemTen.appendChild(anchorTag);
     } else {
-      createListItemTen.textContent = withinTenMiles[i].name;
+      breweryTitle = document.createElement("p");
+      breweryTitle.textContent = withinTenMiles[i].name;
+      breweryTitle.setAttribute("class", "brewery-name");
+      createListItemTen.appendChild(breweryTitle);
     }
 
     createListItemTenAddy = document.createElement("p");
@@ -305,6 +310,20 @@ function createTenList() {
     createListItemTenAddy.textContent = withinTenMiles[i].address;
     createListItemTen.appendChild(createListItemTenAddy);
     createListItemTen.style.fontWeight = "400";
+
+    createListItemTen.addEventListener("click", function (e) {
+      if (withinTenMiles[i].url !== null) {
+        tempChoice = e.currentTarget.querySelector("a").textContent;
+        if (favoritesList.includes(tempChoice) === false) {
+          favoritesList.push(tempChoice);
+        }
+      } else {
+        tempChoice = e.currentTarget.querySelector(".brewery-name").textContent;
+        if (favoritesList.includes(tempChoice) === false) {
+          favoritesList.push(tempChoice);
+        }
+      }
+    });
     marker = new L.marker([withinTenMiles[i].lat, withinTenMiles[i].lon])
       .bindPopup(withinTenMiles[i].name)
       .addTo(map);
@@ -330,7 +349,10 @@ function createFifteenList() {
       anchorTag.appendChild(anchorTagText);
       createListItemFifteen.appendChild(anchorTag);
     } else {
-      createListItemFifteen.textContent = withinFifteenMiles[i].name;
+      breweryTitle = document.createElement("p");
+      breweryTitle.textContent = withinFifteenMiles[i].name;
+      breweryTitle.setAttribute("class", "brewery-name");
+      createListItemFifteen.appendChild(breweryTitle);
     }
 
     createListItemFifteenAddy = document.createElement("p");
@@ -338,6 +360,20 @@ function createFifteenList() {
     createListItemFifteenAddy.textContent = withinFifteenMiles[i].address;
     createListItemFifteen.appendChild(createListItemFifteenAddy);
     createListItemFifteen.style.fontWeight = "400";
+
+    createListItemFifteen.addEventListener("click", function (e) {
+      if (withinFifteenMiles[i].url !== null) {
+        tempChoice = e.currentTarget.querySelector("a").textContent;
+        if (favoritesList.includes(tempChoice) === false) {
+          favoritesList.push(tempChoice);
+        }
+      } else {
+        tempChoice = e.currentTarget.querySelector(".brewery-name").textContent;
+        if (favoritesList.includes(tempChoice) === false) {
+          favoritesList.push(tempChoice);
+        }
+      }
+    });
     marker = new L.marker([
       withinFifteenMiles[i].lat,
       withinFifteenMiles[i].lon,
