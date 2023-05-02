@@ -236,9 +236,9 @@ function createFiveList() {
   for (let i = 0; i < withinFiveMiles.length; i++) {
     createListItem = document.createElement("li");
     createListItem.textContent = withinFiveMiles[i].name;
-    createListItem.setAttribute("class", "title")
-    createListItemAddy = document.createElement("p")
-    createListItemAddy.setAttribute("class", "is-italic subtitle")
+    createListItem.setAttribute("class", "title");
+    createListItemAddy = document.createElement("p");
+    createListItemAddy.setAttribute("class", "is-italic subtitle");
     createListItemAddy.textContent = withinFiveMiles[i].address;
     createList.appendChild(createListItem);
     createListItem.appendChild(createListItemAddy);
