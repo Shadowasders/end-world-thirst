@@ -96,6 +96,9 @@ ul li:nth-of-type(1) {
   height: 300px;
 }
 
+/* .map-wrapper {
+  
+} */
 
 /* footer */
 
@@ -161,10 +164,6 @@ ul li:nth-of-type(1) {
   cursor: pointer;
 }
 
-#map {
-  width: 200px;
-  height: 200px;
-}
 /*Media Queries here
 MQ notes
 set size of list elements on smaller sizes to be normal sized (research bulma classes to find this?) Might have to be js??*/
