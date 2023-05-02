@@ -3,6 +3,7 @@
 // ====================================================== //
 const btnSubmit = document.querySelector("#submit-btn");
 const userZip = document.querySelector("#zipsubmit");
+const clearButton = document.querySelector("#clearbtn");
 const parentSection = document.querySelector(".parent-section");
 const radiusCheck = document.querySelector("#radius-check");
 const btnParentEl = document.querySelector(".btn-parent");
@@ -16,11 +17,13 @@ let breweryList = [];
 let withinFiveMiles = [];
 let withinTenMiles = [];
 let withinFifteenMiles = [];
+let errorMessage = document.querySelector(".errormsg");
 let breweryName, breweryAddress, breweryLat, breweryLon;
 let tempObject;
 let map;
 let marker, circle, lat, lon;
 let distanceOfTempLocation, referenceLocation, tempLocation;
+let warningMessage;
 let createList,
   createListItem,
   createListTen,
@@ -50,6 +53,7 @@ function init() {
 init();
 
 btnSubmit.addEventListener("click", function () {
+  clearWarning();
   eraseOtherLists();
   withinFiveMiles = [];
   withinTenMiles = [];
@@ -63,18 +67,19 @@ btnSubmit.addEventListener("click", function () {
   if (isNaN(tempUserVal)) {
     renderInvalidMessage();
   } else {
-    // console.log("valid input");
+    fetchUserZipCode(tempUserVal);
+    if (favoritesList.includes(tempUserVal) === false) {
+      favoritesList.push(tempUserVal);
+    }
+    localStorage.setItem("input", JSON.stringify(favoritesList));
+    renderFavorites();
   }
-  // let userInput = localStorage.setItem("input", userZip.value);
-  fetchUserZipCode(tempUserVal);
-  favoritesList.push(tempUserVal);
-  localStorage.setItem("input", JSON.stringify(favoritesList));
-  renderFavorites();
 });
 
 console.log(favesListEL);
 function renderFavorites() {
   favesListEL.innerHTML = "";
+  tempUserVal = parseInt(userZip.value);
   for (let i = 0; i < favoritesList.length; i++) {
     let favoritesButton = document.createElement("button");
     favoritesButton.textContent = favoritesList[i];
@@ -83,8 +88,16 @@ function renderFavorites() {
     favesListEL.appendChild(favoritesButton);
 
     favoritesButton.addEventListener("click", function () {
+      clearWarning();
+      eraseOtherLists();
+      withinFiveMiles = [];
+      withinTenMiles = [];
+      withinFifteenMiles = [];
+      breweryList = [];
       fetchUserZipCode(favoritesButton.value);
+      radiusCheck.addEventListener("change", displayLists);
     });
+
   }
 }
 
@@ -92,14 +105,17 @@ function renderFavorites() {
  * user input validation
  */
 function renderInvalidMessage() {
-  let warningMessage;
-  warningMessage = document.createElement("p");
-  warningMessage.style.color = "red";
-  warningMessage.textContent = "Please enter a valid zipcode.";
-  warningMessage.style.marginTop = "0px";
-  document.querySelector("#zipsubmit").style.marginBottom = "0px";
-  btnParentEl.insertBefore(warningMessage, btnSubmit);
+  errorMessage.style.color = "red";
 }
+
+function clearWarning() {
+  errorMessage.style.color = "transparent";
+};
+
+clearButton.addEventListener("click", function() {
+  favesListEL.innerHTML = "";
+  favoritesList = [];
+});
 
 /**
  * fetch data using zip code
@@ -225,9 +241,9 @@ function createFiveList() {
   for (let i = 0; i < withinFiveMiles.length; i++) {
     createListItem = document.createElement("li");
     createListItem.textContent = withinFiveMiles[i].name;
-    createListItem.setAttribute("class", "title")
-    createListItemAddy = document.createElement("p")
-    createListItemAddy.setAttribute("class", "is-italic subtitle")
+    createListItem.setAttribute("class", "title");
+    createListItemAddy = document.createElement("p");
+    createListItemAddy.setAttribute("class", "is-italic subtitle");
     createListItemAddy.textContent = withinFiveMiles[i].address;
     createList.appendChild(createListItem);
     createListItem.appendChild(createListItemAddy);
