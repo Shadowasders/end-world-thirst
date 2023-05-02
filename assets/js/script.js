@@ -67,7 +67,9 @@ btnSubmit.addEventListener("click", function () {
     renderInvalidMessage();
   } else {
     fetchUserZipCode(tempUserVal);
-    favoritesList.push(tempUserVal);
+    if (favoritesList.includes(tempUserVal) === false) {
+      favoritesList.push(tempUserVal);
+    }
     localStorage.setItem("input", JSON.stringify(favoritesList));
     renderFavorites();
   }
