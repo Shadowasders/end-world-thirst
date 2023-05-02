@@ -19,6 +19,16 @@ body {
   font-weight: bold;
   border-radius: 10px;
   background-color: rgba(226, 126, 12, 0.77);
+  text-decoration: underline;
+  text-decoration-color: #ffe4c4;
+  border-bottom: 1px solid #ffe4c4; 
+}
+
+.subtitle {
+  font-size: x-large;
+  font-weight: bolder;
+  text-decoration: underline;
+  text-decoration-color: bisque;
 }
 
 /*main section*/
@@ -78,8 +88,8 @@ ul li:nth-of-type(1) {
 }
 
 #map {
-  width: 300px;
-  height: 250px;
+  width: 400px;
+  height: 300px;
 }
 
 
