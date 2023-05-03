@@ -10,9 +10,9 @@ Finding breweries around you can be a pain. We have created a web app that helps
 
 ### How:
 
--Technologies: HTML/CSS/JavaScript
+- Technologies: HTML/CSS/JavaScript
 
--Frameworks: Bulma CSS
+- Frameworks: Bulma CSS
 
 ### APIs:
 
@@ -64,7 +64,9 @@ Using our web app is easy. Follow the easy steps below:
 
 - Haversine Formula adapted from G&ouml;ran Andersson's code found [here](http://jsfiddle.net/Guffa/57gQa/) .
 
-- All map-specific functions are from Leaflet's documentation, linked above in the API list.
+- Code for clearing lists was sourced from [here] (https://www.designcise.com/web/tutorial/how-to-remove-all-elements-returned-by-javascripts-queryselectorall-method) .
+
+- Code for clearing map layers was sourced from [here] (https://stackoverflow.com/questions/28646317/how-to-remove-all-layers-and-features-from-map) .
 
 ## Challenges/Things Learned:
 
