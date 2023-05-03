@@ -68,4 +68,4 @@ Using our web app is easy. Follow the easy steps below:
 
 ## License
 
-Refer to the LICENSE in the repository.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
