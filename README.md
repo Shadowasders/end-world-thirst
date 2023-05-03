@@ -30,17 +30,17 @@ N/A
 
 Using our web app is easy. Follow the easy steps below:
 
-1. Enter your zipcode in the 'Let's Drink' field
+1. Enter your zipcode in the 'Let's Drink' field of the first column.
 
-2. Submit to begin the search.
+2. Click 'Let's Drink' to begin the search.
 
-3. Click the search radius of your choice.
+3. Click the search radius of your choice in the dropdown menu in the second column.
 
-4. Watch as your list populates!
+4. Click on the :black_heart: icon to add the desired establishment to your Favourites list on the right.
 
-5. Click on the beer icon to add the desired establishment to your Favorites list on the right.
+5. Watch as your list populates in the third column!
 
-6. Want to store new favorites? Simply hit the 'Clear List' button to start over.
+6. Want to store new favorites? Simply hit the 'Clear Faves' button to start over.
 
 <img src="https://github.com/myrojoylee/end-world-thirst/blob/main/assets/images/EWT-demo.gif" width = 500px />
 
@@ -50,45 +50,45 @@ Using our web app is easy. Follow the easy steps below:
 
 ## Development Team:
 
--[Damien Brockington](https://github.com/damez21)
+- [Damien Brockington](https://github.com/damez21)
 
--[Elvis Lau](https://github.com/elvislau74)
+- [Elvis Lau](https://github.com/elvislau74)
 
--[Myro Joy Lee](https://github.com/myrojoylee)
+- [Myro Joy Lee](https://github.com/myrojoylee)
 
--[Aubrey McKinney](https://github.com/shadowasders)
+- [Aubrey McKinney](https://github.com/shadowasders)
 
--[Jimmy Pedone](https://github.com/JimmyPedone)
+- [Jimmy Pedone](https://github.com/JimmyPedone)
 
 ## Sources:
 
--Haversine Formula adapted from G&ouml;ran Andersson's code found [here](http://jsfiddle.net/Guffa/57gQa/) .
+- Haversine Formula adapted from G&ouml;ran Andersson's code found [here](http://jsfiddle.net/Guffa/57gQa/) .
 
--All map-specific functions are from Leaflet's documentation, linked above in the API list.
+- All map-specific functions are from Leaflet's documentation, linked above in the API list.
 
 ## Challenges/Things Learned:
 
--Git workflow
+- Git workflow
 
--Team communication/collaboration
+- Team communication/collaboration
 
--Using more than one API
+- Using more than one API
 
--Learning Bulma for layout
+- Learning Bulma for layout
 
 ## Future Considerations/Improvement:
 
--Short Term:
+- Short Term:
 
-    -Improving text alignment for a better UX
+  - Improving text alignment/styling for a better UX
 
-    -Adding functionality to links in the footer
+  - Adding functionality to links in the footer
 
--Long Term:
+- Long Term:
 
-    -Incorporating backend functionality to make a full stack application
+  - Incorporating backend functionality to make a full stack application
 
-    -Incorporating more dining APIs to give the user more options.
+  - Incorporating more dining APIs to give the user more options.
 
 ## License
 
