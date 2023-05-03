@@ -42,7 +42,7 @@ Using our web app is easy. Follow the easy steps below:
 
 6. Want to store new favorites? Simply hit the 'Clear List' button to start over.
 
-<img src="https://github.com/myrojoylee/end-world-thirst/blob/main/assets/images/wip-project-1.jpg" width = 500px />
+<img src="https://github.com/myrojoylee/end-world-thirst/blob/main/assets/images/EWT-demo.gif" width = 500px />
 
 <a href="https://github.com/myrojoylee/end-world-thirst">Click here for the GitHub Repository</a>
 
