@@ -98,6 +98,12 @@ function renderFavorites() {
       favesListEL.appendChild(favoritesItem);
     }
   }
+  // if (favoritesList.length > 9) {
+  //   localStorage.removeItem(favoritesList[0]);
+  //   favoritesList.shift();
+  //   favoritesListNamesOnly.shift();
+  //   favesListEL.removeChild(favesListEL.getElementsByTagName('p')[0]);
+  // }
 }
 
 /**
