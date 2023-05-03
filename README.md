@@ -66,6 +66,30 @@ Using our web app is easy. Follow the easy steps below:
 
 -All map-specific functions are from Leaflet's documentation, linked above in the API list.
 
+## Challenges/Things Learned:
+
+-Git workflow
+
+-Team communication/collaboration
+
+-Using more than one API
+
+-Learning Bulma for layout
+
+## Future Considerations/Improvement:
+
+-Short Term:
+
+    -Improving text alignment for a better UX
+
+    -Adding functionality to links in the footer
+
+-Long Term:
+
+    -Incorporating backend functionality to make a full stack application
+
+    -Incorporating more dining APIs to give the user more options.
+
 ## License
 
 Refer to the LICENSE in the repository.
