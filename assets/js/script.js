@@ -45,16 +45,11 @@ let createList,
  * favorites list loads upon refresh
  */
 function init() {
-  // let tempVal = localStorage.getItem("input");
-  if (localStorage.length !== 0) {
-    // if exists
-    console.log("here");
+  if (localStorage.userInput != undefined) {
     favoritesList = JSON.parse(localStorage.getItem("userInput"));
-
     for (let i = 0; i < favoritesList.length; i++) {
       favoritesListNamesOnly.push(favoritesList[i].name);
     }
-    console.log(favoritesListNamesOnly);
     renderFavorites();
   }
 }
@@ -81,7 +76,6 @@ btnSubmit.addEventListener("click", function () {
 });
 
 function renderFavorites() {
-  // favesListEL.innerHTML = "";
   let favoritesItem, favoritesItemTag, favoritesItemTagText;
 
   for (let i = 0; i < favoritesList.length; i++) {
@@ -125,9 +119,13 @@ clearButton.addEventListener("click", function () {
 function fetchUserZipCode(tempUserVal) {
   let postalURL = `https://api.openweathermap.org/geo/1.0/zip?zip=${tempUserVal}&appid=${WeatherAPIKey}`;
 
-  fetch(postalURL)
-    .then((response) => response.json())
-    .then(getCoordinates);
+  fetch(postalURL).then(function (response) {
+    if (response.ok) {
+      response.json().then(getCoordinates);
+    } else {
+      renderInvalidMessage();
+    }
+  });
 }
 
 /**
@@ -167,7 +165,6 @@ function filteredBreweries(data) {
     };
     breweryList.push(tempObject);
   }
-  // console.log(breweryList);
   calculateDistBtwCoordPairs();
 }
 
@@ -177,7 +174,6 @@ function filteredBreweries(data) {
  */
 function getCoordinates(allData) {
   let y = allData;
-  console.log(y);
   lat = y.lat;
   lon = y.lon;
   referenceLocation = {
@@ -441,7 +437,6 @@ function createFifteenList() {
  * map and marker display depends on user dropdown choice
  */
 function displayLists() {
-  console.log("we changed options!!!!");
   map.eachLayer(function (layer) {
     map.removeLayer(layer);
   });
