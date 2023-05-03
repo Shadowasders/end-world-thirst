@@ -16,11 +16,11 @@ Finding breweries around you can be a pain. We have created a web app that helps
 
 ### APIs:
 
--[OpenWeather Geocoding API](https://openweathermap.org/api/geocoding-api)
+- [OpenWeather Geocoding API](https://openweathermap.org/api/geocoding-api)
 
--[Open Brewery DB](https://www.openbrewerydb.org/documentation)
+- [Open Brewery DB](https://www.openbrewerydb.org/documentation)
 
--[Leaflet JS](https://leafletjs.com/)
+- [Leaflet JS](https://leafletjs.com/)
 
 ## Installation
 
@@ -64,9 +64,9 @@ Using our web app is easy. Follow the easy steps below:
 
 - Haversine Formula adapted from G&ouml;ran Andersson's code found [here](http://jsfiddle.net/Guffa/57gQa/) .
 
-- Code for clearing lists was sourced from [here] (https://www.designcise.com/web/tutorial/how-to-remove-all-elements-returned-by-javascripts-queryselectorall-method) .
+- Code for clearing lists was sourced from [here](https://www.designcise.com/web/tutorial/how-to-remove-all-elements-returned-by-javascripts-queryselectorall-method) .
 
-- Code for clearing map layers was sourced from [here] (https://stackoverflow.com/questions/28646317/how-to-remove-all-layers-and-features-from-map) .
+- Code for clearing map layers was sourced from [here](https://stackoverflow.com/questions/28646317/how-to-remove-all-layers-and-features-from-map) .
 
 ## Challenges/Things Learned:
 
@@ -88,7 +88,7 @@ Using our web app is easy. Follow the easy steps below:
 
 - Long Term:
 
-  - Incorporating backend functionality to make a full stack application
+  - Incorporating backend functionality to make a full stack application by letting a user create their own account to save their preferences.
 
   - Incorporating more dining APIs to give the user more options.
 
