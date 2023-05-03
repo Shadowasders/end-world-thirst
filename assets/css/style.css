@@ -83,6 +83,10 @@ ul li:hover {
   border-left: gray 2px dashed;
 }
 
+.length:nth-of-type(1) {
+  border-right: gray 2px dashed;
+}
+
 .desc {
   border-bottom: gray 2px dashed;
 }
