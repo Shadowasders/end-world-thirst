@@ -4,7 +4,7 @@ End World Thirst: A Website to Find Breweries Near You!
 
 ## Description
 
-### What:
+### Summary:
 
 Finding breweries around you can be a pain. We have created a web app that helps plan your next outing by helping the user create a list of breweries based off of their zipcode.
 
@@ -60,14 +60,6 @@ Using our web app is easy. Follow the easy steps below:
 
 - [Jimmy Pedone](https://github.com/JimmyPedone)
 
-## Sources:
-
-- Haversine Formula adapted from G&ouml;ran Andersson's code found [here](http://jsfiddle.net/Guffa/57gQa/) .
-
-- Code for clearing lists was sourced from [here](https://www.designcise.com/web/tutorial/how-to-remove-all-elements-returned-by-javascripts-queryselectorall-method) .
-
-- Code for clearing map layers was sourced from [here](https://stackoverflow.com/questions/28646317/how-to-remove-all-layers-and-features-from-map) .
-
 ## Challenges/Things Learned:
 
 - Git workflow
@@ -91,6 +83,26 @@ Using our web app is easy. Follow the easy steps below:
   - Incorporating backend functionality to make a full stack application by letting a user create their own account to save their preferences.
 
   - Incorporating more dining APIs to give the user more options.
+
+## Acknowledgments
+
+### Sources:
+
+- Our header and footer image came from [Fred Moon](https://unsplash.com/@fwed) .
+
+- Favorites icon sourced from [here](https://icons8.com/).
+
+- Haversine Formula adapted from G&ouml;ran Andersson's code found [here](http://jsfiddle.net/Guffa/57gQa/) .
+
+- Code for clearing lists was sourced from [here](https://www.designcise.com/web/tutorial/how-to-remove-all-elements-returned-by-javascripts-queryselectorall-method) .
+
+- Code for clearing map layers was sourced from [here](https://stackoverflow.com/questions/28646317/how-to-remove-all-layers-and-features-from-map) .
+
+### Thank you...
+
+- ... to our instructional team at Bootcamp for all the help, feedback, and debugging sessions.
+
+- ... to our colleagues during the testing phase.
 
 ## License
 
