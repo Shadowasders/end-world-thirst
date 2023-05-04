@@ -18,19 +18,20 @@
 </head>
 
 <body>
+<!-- Cover title -->
   <section class="hero is-medium topbeer">
     <h1 class="hero-body">
-
       <article class="container has-text-centered container is-one-fifth title-box">
         <p class="has-text-white is-size-1 top-title">END WORLD THIRST</p>
-
         <p class="subtitle has-text-white">Never Drink Alone</p>
       </article>
     </h1>
   </section>
 
+<!-- 1) Left column: "HOW DOES THIS WORK?" -->
+<!-- 2) first section tag applies to all three columns -->
   <section class="columns overflow">
-    <div class="column is-4 has-background-warning-light ml-2 length">
+    <section class="column is-4 has-background-warning-light ml-2 length">
       <p class="title is-size-2 has-text-centered">HOW DOES THIS WORK?</p>
       <p class="is-size-5 has-text-left desc reformattext">1. Enter your zipcode below.</p>
       <br />
@@ -44,44 +45,50 @@
           <p class="errormsg">Please enter a valid zipcode</p>
         <button class="button is-fullwidth is-medium interact" name="submit" id="submit-btn">Let's Drink!</button>
       </section>
-    </div>
-    <div class="column is-4 has-background-warning-light custom-scroll">
-      <p class="title is-size-2 has-text-centered">FIND BREWS</p>
-      <section class="name"></section>
-      <section class="column is-narrow">
-        <div class="map-wrapper">
-        <div id="map" class="m-auto"></div>
-      </div>
+    </section>
+
+    <!-- 1) Middle column: "FIND BREWS" -->
+    <!-- 2) First section tag wraps center column and right column -->
+  <section class="column is-4 has-background-warning-light custom-scroll">
+    <p class="title is-size-2 has-text-centered">FIND BREWS</p>
+    <section class="name"></section>
+    <section class="column is-narrow">
+      <section class="map-wrapper">
+        <section id="map" class="m-auto"></section>
       </section>
-      <section class="address"></section>
-      <div id="search-radius" class="content container">
-        <h2 class="subtitle has-text-weight-bold has-text-centered is-underlined">Choose your search radius</h2>
-        <div class="select is-fullwidth is-size-4 is-rounded">
-        <select id="radius-check">
-          <option id="baseline" value="0 miles" name="radius-option">Select a range</option>
-          <option id="five-miles" value="5 miles" name="radius-option">
-            5 Miles
-          </option>
-          <option id="ten-miles" value="10 miles" name="radius-option">
-            10 Miles
-          </option>
-          <option id="fifteen-miles" value="15 miles" name="radius-option">
-            15 Miles
-          </option>
-        </select>
-        </div>
-        <div class="parent-section"></div>
-      </div>
-    </div>
-    <div class="column is-4 has-background-warning length">
-      <p class="title is-size-2 has-text-centered">FAVOURITES!<i class="fa-solid fa-heart icon" style="color: #e27e0c;"></i>
-      </p>
-     
-      <div id="clearfavesdiv">
+    </section>
+
+    <!-- "Choose your search radius" drop-down menu -->
+    <section class="address"></section>
+    <section id="search-radius" class="content container">
+      <h2 class="subtitle has-text-weight-bold has-text-centered is-underlined">Choose your search radius</h2>
+      <section class="select is-fullwidth is-size-4 is-rounded">
+      <select id="radius-check">
+        <option id="baseline" value="0 miles" name="radius-option">Select a range</option>
+        <option id="five-miles" value="5 miles" name="radius-option">
+          5 Miles
+        </option>
+        <option id="ten-miles" value="10 miles" name="radius-option">
+          10 Miles
+        </option>
+        <option id="fifteen-miles" value="15 miles" name="radius-option">
+          15 Miles
+        </option>
+      </select>
+    </section>
+      <div class="parent-section"></div>
+    </section>
+  </section>
+
+  <!-- Right column: "FAVOURITES" title -->
+  <section class="column is-4 has-background-warning length">
+    <p class="title is-size-2 has-text-centered">FAVOURITES!<i class="fa-solid fa-heart icon" style="color: #e27e0c;"></i></p>
+    
+      <section id="clearfavesdiv">
         <button class="button is-medium is-fullwidth is-responsive is-warning-light interact" id="clearbtn">Clear Faves</button>
-      </div>
+      </section>
        <div id="faves-list"></div>
-    </div>
+  </section>
   </section>
   <footer class="footerimage">
     <section class="columns bottombeer">
