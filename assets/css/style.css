@@ -35,36 +35,14 @@ body {
 }
 
 /*main section*/
-/*TODOS
-style img for better responsiveness (currently section tag is causing weird spacing? Possibily rewite that?)*/
 
-ul li {
-  list-style-type: none;
-  background: url("../images/heart-icon.png") no-repeat 7px 7px;
-  padding-top: 10px;
-  padding-left: 60px;
-}
-
-ul li:hover {
-  background: url("../images/heart-filled-icon.png") no-repeat 7px 7px;
-  cursor: pointer;
-}
-
-#map {
-  width: 400px;
-  height: 300px;
-}
-
+/* "HOW DOES THIS WORK" column styling */
 #zipsubmit {
   margin-bottom: 0;
 }
 
 #faves-list a {
   padding: 1% 2%;
-}
-
-.icon {
-  width: 300px;
 }
 
 .brewery-name {
@@ -77,6 +55,28 @@ ul li:hover {
   color: transparent;
 }
 
+/* Heart Icon */
+ul li {
+  list-style-type: none;
+  background: url("../images/heart-icon.png") no-repeat 7px 7px;
+  padding-top: 10px;
+  padding-left: 60px;
+}
+
+ul li:hover {
+  background: url("../images/heart-filled-icon.png") no-repeat 7px 7px;
+  cursor: pointer;
+}
+
+.icon {
+  width: 300px;
+}
+
+/* Map Styles */
+#map {
+  width: 400px;
+  height: 300px;
+}
 
 .length {
   height: var(--desktopSectionHeight);
@@ -121,10 +121,6 @@ ul li:hover {
 .cuswidth {
   width: 80%;
 }
-
-/* .map-wrapper {
-  
-} */
 
 /* footer */
 
