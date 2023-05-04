@@ -190,9 +190,7 @@ ul li:hover {
   font-size: 20px;
 }
 
-/*Media Queries here
-MQ notes
-Move instructions to be centered on smaller sizes? (might be a js issue since silly bulma texts)*/
+/*Media Queries here*/
 @media (max-width: 576px) {
     .has-text-left, .has-text-right {
       text-align: center!important;
